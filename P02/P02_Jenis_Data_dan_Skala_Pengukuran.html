@@ -1,0 +1,2234 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="pandoc" />
+
+        <meta name="author" content="Abyan Fathin Pradafi" />
+    
+        <meta name="date" content="2026-10-03" />
+    
+    <title>Introduction to Statistics (SDT-1102)</title>
+
+        <script src="libs/header-attrs-2.32/header-attrs.js"></script>
+        <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="libs/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="libs/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+        <script src="libs/navigation-1.1/tabsets.js"></script>
+        <script src="libs/navigation-1.1/codefolding.js"></script>
+        <link href="libs/magnific-popup-1.1.0/magnific-popup.css" rel="stylesheet" />
+        <script src="libs/magnific-popup-1.1.0/jquery.magnific-popup.min.js"></script>
+        <link href="libs/readthedown-0.1/readthedown.css" rel="stylesheet" />
+        <link href="libs/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
+        <script src="libs/readthedown-0.1/readthedown.js"></script>
+        <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+        <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+    
+    
+        <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">
+      html { -webkit-text-size-adjust: 100%; }
+      pre > code.sourceCode { white-space: pre; position: relative; }
+      pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+      pre > code.sourceCode > span:empty { height: 1.2em; }
+      .sourceCode { overflow: visible; }
+      code.sourceCode > span { color: inherit; text-decoration: inherit; }
+      div.sourceCode { margin: 1em 0; }
+      pre.sourceCode { margin: 0; }
+      @media screen {
+      div.sourceCode { overflow: auto; }
+      }
+      @media print {
+      pre > code.sourceCode { white-space: pre-wrap; }
+      pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+      }
+      pre.numberSource code
+        { counter-reset: source-line 0; }
+      pre.numberSource code > span
+        { position: relative; left: -4em; counter-increment: source-line; }
+      pre.numberSource code > span > a:first-child::before
+        { content: counter(source-line);
+          position: relative; left: -1em; text-align: right; vertical-align: baseline;
+          border: none; display: inline-block;
+          -webkit-touch-callout: none; -webkit-user-select: none;
+          -khtml-user-select: none; -moz-user-select: none;
+          -ms-user-select: none; user-select: none;
+          padding: 0 4px; width: 4em;
+          background-color: #ffffff;
+          color: #a0a0a0;
+        }
+      pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+      div.sourceCode
+        { color: #1f1c1b; background-color: #ffffff; }
+      @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+      }
+      code span { color: #1f1c1b; } /* Normal */
+      code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+      code span.an { color: #ca60ca; } /* Annotation */
+      code span.at { color: #0057ae; } /* Attribute */
+      code span.bn { color: #b08000; } /* BaseN */
+      code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+      code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+      code span.ch { color: #924c9d; } /* Char */
+      code span.cn { color: #aa5500; } /* Constant */
+      code span.co { color: #898887; } /* Comment */
+      code span.cv { color: #0095ff; } /* CommentVar */
+      code span.do { color: #607880; } /* Documentation */
+      code span.dt { color: #0057ae; } /* DataType */
+      code span.dv { color: #b08000; } /* DecVal */
+      code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+      code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+      code span.fl { color: #b08000; } /* Float */
+      code span.fu { color: #644a9b; } /* Function */
+      code span.im { color: #ff5500; } /* Import */
+      code span.in { color: #b08000; } /* Information */
+      code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+      code span.op { color: #1f1c1b; } /* Operator */
+      code span.ot { color: #006e28; } /* Other */
+      code span.pp { color: #006e28; } /* Preprocessor */
+      code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+      code span.sc { color: #3daee9; } /* SpecialChar */
+      code span.ss { color: #ff5500; } /* SpecialString */
+      code span.st { color: #bf0303; } /* String */
+      code span.va { color: #0057ae; } /* Variable */
+      code span.vs { color: #bf0303; } /* VerbatimString */
+      code span.wa { color: #bf0303; } /* Warning */
+    </style>
+    
+        <link rel="stylesheet" href="style.css" type="text/css" />
+    
+    <!-- tabsets -->
+    <script>
+      $(document).ready(function () {
+	  window.buildTabsets("toc");
+      });
+      $(document).ready(function () {
+	  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+	      $(this).parent().toggleClass('nav-tabs-open')
+	  });
+      });
+    </script>
+
+    <!-- code folding -->
+        <script>
+      $(document).ready(function () {
+	  	  	  window.initializeCodeFolding("show" === "show");
+	        });
+    </script>
+    
+    <!-- code download -->
+    
+    <!-- tabsets dropdown -->
+
+    <style type="text/css">
+      .tabset-dropdown > .nav-tabs {
+	  display: inline-table;
+	  max-height: 500px;
+	  min-height: 44px;
+	  overflow-y: auto;
+	  background: white;
+	  border: 1px solid #ddd;
+	  border-radius: 4px;
+      }
+      
+      .tabset-dropdown > .nav-tabs > li.active:before {
+	  content: "";
+	  font-family: 'Glyphicons Halflings';
+	  display: inline-block;
+	  padding: 10px;
+	  border-right: 1px solid #ddd;
+      }
+      
+      .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+	  content: "&#xe258;";
+	  border: none;
+      }
+      
+      .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+	  content: "";
+	  font-family: 'Glyphicons Halflings';
+	  display: inline-block;
+	  padding: 10px;
+	  border-right: 1px solid #ddd;
+      }
+      
+      .tabset-dropdown > .nav-tabs > li.active {
+	  display: block;
+      }
+
+      .tabset-dropdown > .nav-tabs > li.active a {
+  	  padding: 0 15px !important;
+      }
+
+      .tabset-dropdown > .nav-tabs > li > a,
+      .tabset-dropdown > .nav-tabs > li > a:focus,
+      .tabset-dropdown > .nav-tabs > li > a:hover {
+	  border: none;
+	  display: inline-block;
+	  border-radius: 4px;
+	  background-color: transparent;
+      }
+      
+      .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+	  display: block;
+	  float: none;
+      }
+      
+      .tabset-dropdown > .nav-tabs > li {
+	  display: none;
+	  margin-left: 0 !important;
+      }
+    </style>
+    
+</head>
+
+<body class="preload">
+
+   	
+         <!-- readthedown start -->   
+   <div id="content" data-toggle="wy-nav-shift">
+     <nav id="nav-top" role="navigation" aria-label="top navigation">
+       <a role="button" href="#" data-toggle="wy-nav-top"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+     </nav>
+         
+      <div class="btn-group pull-right">
+     <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+     <ul class="dropdown-menu" style="min-width: 50px;">
+	    	    <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+	    <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+	    	    	         </ul>
+   </div>
+   
+        
+      <h1 class="title">Introduction to Statistics (SDT-1102)</h1>
+         <h1 class="subtitle">Practicum 1: Jenis Data dan Skala
+Pengukuran</h1>
+   
+         <!-- readthedown authors -->
+   <div id="sidebar">
+    <h2><a href="#content">Introduction to Statistics
+(SDT-1102)</a></h2>
+    <div id="toc">
+      <ul>
+      <li><a href="#jenis-data" id="toc-jenis-data"><span
+      class="toc-section-number">1</span> Jenis Data</a>
+      <ul>
+      <li><a href="#kualitatif-vs-kuantitatif"
+      id="toc-kualitatif-vs-kuantitatif"><span
+      class="toc-section-number">1.1</span> Kualitatif vs
+      Kuantitatif</a></li>
+      <li><a href="#pohon-klasifikasi-data"
+      id="toc-pohon-klasifikasi-data"><span
+      class="toc-section-number">1.2</span> Pohon Klasifikasi
+      Data</a></li>
+      </ul></li>
+      <li><a href="#sumber-data" id="toc-sumber-data"><span
+      class="toc-section-number">2</span> Sumber Data</a>
+      <ul>
+      <li><a href="#data-primer-vs-sekunder"
+      id="toc-data-primer-vs-sekunder"><span
+      class="toc-section-number">2.1</span> Data Primer vs
+      Sekunder</a></li>
+      <li><a href="#menjelajahi-data-sekunder-di-r"
+      id="toc-menjelajahi-data-sekunder-di-r"><span
+      class="toc-section-number">2.2</span> Menjelajahi Data Sekunder di
+      R</a></li>
+      <li><a href="#mensimulasikan-data-primer"
+      id="toc-mensimulasikan-data-primer"><span
+      class="toc-section-number">2.3</span> Mensimulasikan Data
+      Primer</a></li>
+      </ul></li>
+      <li><a href="#skala-pengukuran" id="toc-skala-pengukuran"><span
+      class="toc-section-number">3</span> Skala Pengukuran</a>
+      <ul>
+      <li><a href="#operasi-yang-sah-untuk-tiap-skala"
+      id="toc-operasi-yang-sah-untuk-tiap-skala"><span
+      class="toc-section-number">3.1</span> Operasi yang Sah untuk Tiap
+      Skala</a></li>
+      <li><a href="#nominal-angka-hanya-sebagai-label"
+      id="toc-nominal-angka-hanya-sebagai-label"><span
+      class="toc-section-number">3.2</span> Nominal: Angka Hanya Sebagai
+      Label</a></li>
+      <li><a href="#ordinal-berurutan-jarak-tidak-pasti"
+      id="toc-ordinal-berurutan-jarak-tidak-pasti"><span
+      class="toc-section-number">3.3</span> Ordinal: Berurutan, Jarak
+      Tidak Pasti</a></li>
+      <li><a href="#interval-selisih-bermakna-rasio-tidak"
+      id="toc-interval-selisih-bermakna-rasio-tidak"><span
+      class="toc-section-number">3.4</span> Interval: Selisih Bermakna,
+      Rasio Tidak</a></li>
+      <li><a href="#rasio-semua-operasi-sah"
+      id="toc-rasio-semua-operasi-sah"><span
+      class="toc-section-number">3.5</span> Rasio: Semua Operasi
+      Sah</a></li>
+      <li><a href="#menentukan-skala-empat-pertanyaan-berurutan"
+      id="toc-menentukan-skala-empat-pertanyaan-berurutan"><span
+      class="toc-section-number">3.6</span> Menentukan Skala: Empat
+      Pertanyaan Berurutan</a></li>
+      </ul></li>
+      <li><a href="#skala-dan-tipe-data-di-r"
+      id="toc-skala-dan-tipe-data-di-r"><span
+      class="toc-section-number">4</span> Skala dan Tipe Data di R</a>
+      <ul>
+      <li><a href="#memetakan-skala-ke-tipe-data"
+      id="toc-memetakan-skala-ke-tipe-data"><span
+      class="toc-section-number">4.1</span> Memetakan Skala ke Tipe
+      Data</a></li>
+      <li><a href="#urutan-level-yang-keliru"
+      id="toc-urutan-level-yang-keliru"><span
+      class="toc-section-number">4.2</span> Urutan Level yang
+      Keliru</a></li>
+      <li><a href="#jebakan-mengonversi-factor-berisi-angka"
+      id="toc-jebakan-mengonversi-factor-berisi-angka"><span
+      class="toc-section-number">4.3</span> Jebakan: Mengonversi Factor
+      Berisi Angka</a></li>
+      <li><a href="#jebakan-angka-tersimpan-sebagai-teks"
+      id="toc-jebakan-angka-tersimpan-sebagai-teks"><span
+      class="toc-section-number">4.4</span> Jebakan: Angka Tersimpan
+      sebagai Teks</a></li>
+      </ul></li>
+      <li><a href="#struktur-dataset" id="toc-struktur-dataset"><span
+      class="toc-section-number">5</span> Struktur Dataset</a>
+      <ul>
+      <li><a href="#observasi-variabel-feature-dan-target"
+      id="toc-observasi-variabel-feature-dan-target"><span
+      class="toc-section-number">5.1</span> Observasi, Variabel,
+      Feature, dan Target</a></li>
+      <li><a href="#tidy-data" id="toc-tidy-data"><span
+      class="toc-section-number">5.2</span> Tidy Data</a></li>
+      <li><a href="#format-wide-vs-long"
+      id="toc-format-wide-vs-long"><span
+      class="toc-section-number">5.3</span> Format Wide vs Long</a></li>
+      </ul></li>
+      <li><a
+      href="#studi-kasus-komprehensif-membersihkan-data-pelanggan"
+      id="toc-studi-kasus-komprehensif-membersihkan-data-pelanggan"><span
+      class="toc-section-number">6</span> Studi Kasus Komprehensif:
+      Membersihkan Data Pelanggan</a>
+      <ul>
+      <li><a href="#langkah-1-klasifikasi-setiap-variabel"
+      id="toc-langkah-1-klasifikasi-setiap-variabel"><span
+      class="toc-section-number">6.1</span> Langkah 1: Klasifikasi
+      Setiap Variabel</a></li>
+      <li><a href="#langkah-2-mengonversi-ke-tipe-yang-tepat"
+      id="toc-langkah-2-mengonversi-ke-tipe-yang-tepat"><span
+      class="toc-section-number">6.2</span> Langkah 2: Mengonversi ke
+      Tipe yang Tepat</a></li>
+      <li><a href="#langkah-3-ringkasan-yang-sesuai-skala"
+      id="toc-langkah-3-ringkasan-yang-sesuai-skala"><span
+      class="toc-section-number">6.3</span> Langkah 3: Ringkasan yang
+      Sesuai Skala</a></li>
+      <li><a href="#langkah-4-memisahkan-feature-dan-target"
+      id="toc-langkah-4-memisahkan-feature-dan-target"><span
+      class="toc-section-number">6.4</span> Langkah 4: Memisahkan
+      Feature dan Target</a></li>
+      <li><a href="#pertanyaan-diskusi-dan-jawaban"
+      id="toc-pertanyaan-diskusi-dan-jawaban"><span
+      class="toc-section-number">6.5</span> Pertanyaan Diskusi dan
+      Jawaban</a></li>
+      </ul></li>
+      <li><a href="#latihan-mandiri" id="toc-latihan-mandiri"><span
+      class="toc-section-number">7</span> Latihan Mandiri</a>
+      <ul>
+      <li><a href="#latihan-utama-dataset-airquality"
+      id="toc-latihan-utama-dataset-airquality"><span
+      class="toc-section-number">7.1</span> Latihan Utama: Dataset
+      airquality</a>
+      <ul>
+      <li><a href="#tugas-1-klasifikasikan-setiap-variabel"
+      id="toc-tugas-1-klasifikasikan-setiap-variabel"><span
+      class="toc-section-number">7.1.1</span> Tugas 1: Klasifikasikan
+      setiap variabel</a></li>
+      <li><a
+      href="#tugas-2-ubah-month-menjadi-factor-berurutan-dengan-label-nama-bulan"
+      id="toc-tugas-2-ubah-month-menjadi-factor-berurutan-dengan-label-nama-bulan"><span
+      class="toc-section-number">7.1.2</span> Tugas 2: Ubah Month
+      menjadi factor berurutan dengan label nama bulan</a></li>
+      <li><a
+      href="#tugas-4-konversi-temp-ke-c-dan-kelvin-lalu-jelaskan-mengapa-rasio-suhu"
+      id="toc-tugas-4-konversi-temp-ke-c-dan-kelvin-lalu-jelaskan-mengapa-rasio-suhu"><span
+      class="toc-section-number">7.1.3</span> Tugas 4: Konversi Temp ke
+      °C dan Kelvin, lalu jelaskan mengapa rasio suhu</a></li>
+      <li><a href="#tugas-5-tentukan-feature-dan-target"
+      id="toc-tugas-5-tentukan-feature-dan-target"><span
+      class="toc-section-number">7.1.4</span> Tugas 5: Tentukan
+      <em>feature</em> dan <em>target</em></a></li>
+      <li><a href="#tugas-6-tantangan-ubah-ke-format-long"
+      id="toc-tugas-6-tantangan-ubah-ke-format-long"><span
+      class="toc-section-number">7.1.5</span> Tugas 6 (Tantangan): Ubah
+      ke format <em>long</em></a></li>
+      </ul></li>
+      <li><a href="#latihan-tambahan-self-check"
+      id="toc-latihan-tambahan-self-check"><span
+      class="toc-section-number">7.2</span> Latihan Tambahan
+      (Self-Check)</a></li>
+      </ul></li>
+      <li><a
+      href="#kesalahan-umum-dalam-jenis-data-dan-skala-pengukuran"
+      id="toc-kesalahan-umum-dalam-jenis-data-dan-skala-pengukuran"><span
+      class="toc-section-number">8</span> Kesalahan Umum dalam Jenis
+      Data dan Skala Pengukuran</a></li>
+      <li><a href="#cheat-sheet-fungsi-r-yang-digunakan"
+      id="toc-cheat-sheet-fungsi-r-yang-digunakan"><span
+      class="toc-section-number">9</span> Cheat Sheet: Fungsi R yang
+      Digunakan</a></li>
+      <li><a href="#glosarium-istilah" id="toc-glosarium-istilah"><span
+      class="toc-section-number">10</span> Glosarium Istilah</a></li>
+      <li><a href="#rangkuman-dan-kesimpulan"
+      id="toc-rangkuman-dan-kesimpulan"><span
+      class="toc-section-number">11</span> Rangkuman dan
+      Kesimpulan</a></li>
+      <li><a href="#referensi-pendukung"
+      id="toc-referensi-pendukung"><span
+      class="toc-section-number">12</span> Referensi Pendukung</a></li>
+      </ul>
+    </div>
+    <div id="postamble" data-toggle="wy-nav-shift" class="status">
+                  <p class="author"><span class="glyphicon glyphicon-user"></span> Abyan
+Fathin Pradafi</p>
+                        <p class="date"><span class="glyphicon glyphicon-calendar"></span> October
+03, 2026</p>
+          </div>
+   </div>
+     
+
+   
+      
+   
+<!-- Don't indent these lines or it will mess pre blocks indentation --> 
+<div id="main">
+<div style="text-align:center;">
+<p><img class="zoom-img"
+     src="profil.jpg"
+     style="width:250px;height:250px;border-radius:50%;
+            border:2px solid #2c3e50;
+            display:block;margin:auto;object-fit:cover;object-position:10% center" /></p>
+<h3 class="zoom-text" style="margin-top:12px;">
+Abyan Fathin Pradafi
+</h3>
+<p style="text-align:center;font-size:14px;margin-top:3px;">
+<a class="zoom-link" href="https://www.linkedin.com/in/abyan-fathin-pradafi-890645328/" target="_blank" rel="noopener noreferrer"
+   style="display:inline-block;margin:0 8px;text-decoration:none;white-space:nowrap;">
+<img class="zoom-icon" src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+       style="width:16px;height:16px;vertical-align:middle;"> LinkedIn
+</a> <span style="margin:0 6px;">|</span>
+<a class="zoom-link" href="https://github.com/Fathinda" target="_blank" rel="noopener noreferrer"
+   style="display:inline-block;margin:0 8px;text-decoration:none;white-space:nowrap;">
+<img class="zoom-icon" src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+       style="width:16px;height:16px;vertical-align:middle;"> GitHub
+</a> <span style="margin:0 6px;">|</span>
+<a class="zoom-link" href="mailto:abyanfathin67@gmail.com"
+   style="display:inline-block;margin:0 8px;text-decoration:none;white-space:nowrap;">
+<img class="zoom-icon" src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+       style="width:16px;height:16px;vertical-align:middle;"> Email </a>
+</p>
+<p class="zoom-text" style="max-width:520px;margin:10px auto;text-align:center;
+          font-size:13.8px;line-height:1.5;color:#333;">
+Mahasiswa <strong>Institut Teknologi Sains Bandung</strong> prodi
+<strong>Data Science</strong> yang tertarik pada bidang Data Analyst.
+Memiliki rasa ingin tahu tinggi terhadap ekosistem IT dari POV
+Development, IT Support, hingga IT Infrastructure.
+</p>
+</div>
+<hr />
+<div id="jenis-data" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Jenis Data</h1>
+<div id="kualitatif-vs-kuantitatif" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Kualitatif vs
+Kuantitatif</h2>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Jenis</th>
+<th align="left">Definisi</th>
+<th align="left">Contoh</th>
+<th align="left">Ringkasan yang tepat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>Kualitatif</strong><br>(kategorik)</td>
+<td align="left">Data berupa <strong>label, kategori, atau
+atribut</strong></td>
+<td align="left">Metode pembayaran, golongan darah, tingkat
+pendidikan</td>
+<td align="left">Frekuensi, persentase, modus</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Kuantitatif</strong><br>(numerik)</td>
+<td align="left">Data berupa <strong>angka hasil menghitung atau
+mengukur</strong> yang bermakna secara aritmetika</td>
+<td align="left">Jumlah transaksi, berat badan, lama menonton</td>
+<td align="left">Mean, median, simpangan baku, dsb.</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>metode_bayar <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;QRIS&quot;</span>, <span class="st">&quot;Tunai&quot;</span>, <span class="st">&quot;QRIS&quot;</span>, <span class="st">&quot;Debit&quot;</span>, <span class="st">&quot;QRIS&quot;</span>, <span class="st">&quot;E-Wallet&quot;</span>, <span class="st">&quot;Tunai&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>nominal_trx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">25000</span>, <span class="dv">18000</span>, <span class="dv">42500</span>, <span class="dv">150000</span>, <span class="dv">12000</span>, <span class="dv">67000</span>, <span class="dv">30000</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">table</span>(metode_bayar)</span></code></pre></div>
+<pre><code>## metode_bayar
+##    Debit E-Wallet     QRIS    Tunai 
+##        1        1        3        2</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(metode_bayar))</span></code></pre></div>
+<pre><code>## metode_bayar
+##     Debit  E-Wallet      QRIS     Tunai 
+## 0.1428571 0.1428571 0.4285714 0.2857143</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">mean</span>(nominal_trx) <span class="co"># kuantitatif -&gt; dapat dirata-ratakan</span></span></code></pre></div>
+<pre><code>## [1] 49214.29</code></pre>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Jenis</th>
+<th align="left">Ciri</th>
+<th align="left">Contoh</th>
+<th align="left">Cara memperoleh</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>Diskrit</strong></td>
+<td align="left">Nilai <strong>terhitung</strong> (biasanya bilangan
+bulat); ada “celah” di antara nilai yang mungkin</td>
+<td align="left">Jumlah anak, jumlah transaksi, jumlah mahasiswa yang
+hadir</td>
+<td align="left"><strong>Menghitung</strong> (<em>counting</em>)</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Kontinu</strong></td>
+<td align="left">Nilai dapat berada <strong>di mana saja</strong> dalam
+suatu rentang, dibatasi hanya oleh ketelitian alat</td>
+<td align="left">Tinggi badan, waktu tempuh, suhu, kadar TSS air</td>
+<td align="left"><strong>Mengukur</strong> (<em>measuring</em>)</td>
+</tr>
+</tbody>
+</table>
+<p>Pertanyaan praktis untuk membedakan: <strong>“Apakah nilai 2,5 masuk
+akal?”</strong> Jumlah anak 2,5 tidak mungkin (diskrit), tetapi waktu
+tempuh 2,5 jam masuk akal (kontinu).</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>jumlah_anak <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span><span class="dt">L</span>, <span class="dv">2</span><span class="dt">L</span>, <span class="dv">1</span><span class="dt">L</span>, <span class="dv">3</span><span class="dt">L</span>, <span class="dv">2</span><span class="dt">L</span>) <span class="co"># L -&gt; integer (bilangan bulat)</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>waktu_jam <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.25</span>, <span class="fl">2.5</span>, <span class="fl">0.75</span>, <span class="fl">3.1</span>, <span class="fl">1.8</span>) <span class="co"># numeric (bilangan desimal)</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="fu">class</span>(jumlah_anak); <span class="fu">class</span>(waktu_jam)</span></code></pre></div>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Memeriksa apakah semua nilai bilangan bulat</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>semua_bulat <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">all</span>(x <span class="sc">==</span> <span class="fu">round</span>(x))</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="fu">c</span>(<span class="at">jumlah_anak =</span> <span class="fu">semua_bulat</span>(jumlah_anak), <span class="at">waktu_jam =</span> <span class="fu">semua_bulat</span>(waktu_jam))</span></code></pre></div>
+<pre><code>## jumlah_anak   waktu_jam 
+##        TRUE       FALSE</code></pre>
+<p><strong>Pembulatan tidak mengubah jenis data</strong>. Usia yang
+dicatat “21 tahun” tetap <strong>kontinu</strong>, karena usia
+sebenarnya terus bertambah; bilangan bulat hanya akibat cara pen-
+catatan. Sebaliknya, uang (Rp) secara teknis diskrit (satuan terkecil
+rupiah), tetapi karena rentangnya sangat besar, dalam praktik
+<strong>diperlakukan sebagai kontinu</strong>. Perbedaan diskrit-kontinu
+memengaruhi grafik yang tepat (Pertemuan 4): data diskrit dengan sedikit
+nilai cocok dengan diagram batang per nilai, data kontinu dengan
+histogram.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">21</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>anak <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">200</span>, <span class="at">lambda =</span> <span class="dv">2</span>) <span class="co"># diskrit</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>tempuh <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">200</span>, <span class="at">shape =</span> <span class="dv">4</span>, <span class="at">rate =</span> <span class="dv">2</span>) <span class="co"># kontinu (jam)</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(anak), <span class="at">col =</span> <span class="st">&quot;#4C72B0&quot;</span>, <span class="at">border =</span> <span class="st">&quot;white&quot;</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="at">main =</span> <span class="st">&quot;Diskrit: Jumlah Anak&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Jumlah anak&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Frekuensi&quot;</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="fu">hist</span>(tempuh, <span class="at">breaks =</span> <span class="dv">15</span>, <span class="at">col =</span> <span class="st">&quot;#DD8452&quot;</span>, <span class="at">border =</span> <span class="st">&quot;white&quot;</span>,</span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="at">main =</span> <span class="st">&quot;Kontinu: Waktu Tempuh&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Jam&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Frekuensi&quot;</span>)</span></code></pre></div>
+<p><img src="P02_Jenis_Data_dan_Skala_Pengukuran_files/figure-html/unnamed-chunk-6-1.png" alt="" width="768" /></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+</div>
+<div id="pohon-klasifikasi-data" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Pohon Klasifikasi
+Data</h2>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Tingkat 1</th>
+<th align="left">Tingkat 2</th>
+<th align="left">Skala yang mungkin</th>
+<th align="left">Contoh</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Kualitatif</td>
+<td align="left">Tanpa urutan</td>
+<td align="left">Nominal</td>
+<td align="left">Provinsi, merek ponsel</td>
+</tr>
+<tr class="even">
+<td align="left">Kualitatif</td>
+<td align="left">Berurutan</td>
+<td align="left">Ordinal</td>
+<td align="left">Tingkat pendidikan, peringkat hotel</td>
+</tr>
+<tr class="odd">
+<td align="left">Kuantitatif</td>
+<td align="left">Diskrit</td>
+<td align="left">Rasio (umumnya)</td>
+<td align="left">Jumlah kunjungan</td>
+</tr>
+<tr class="even">
+<td align="left">Kuantitatif</td>
+<td align="left">Kontinu</td>
+<td align="left">Interval atau rasio</td>
+<td align="left">Suhu °C (interval), berat (rasio)</td>
+</tr>
+</tbody>
+</table>
+<hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
+</div>
+</div>
+<div id="sumber-data" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Sumber Data</h1>
+<div id="data-primer-vs-sekunder" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Data Primer vs
+Sekunder</h2>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Aspek</th>
+<th align="left">Data Primer</th>
+<th align="left">Data Sekunder</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>Definisi</strong></td>
+<td align="left">Dikumpulkan <strong>sendiri</strong> oleh peneliti
+untuk tujuan penelitiannya</td>
+<td align="left">Dikumpulkan <strong>pihak lain</strong> untuk tujuan
+lain, lalu dipakai ulang</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Contoh</strong></td>
+<td align="left">Kuesioner kepuasan yang Anda sebar; pengukuran sampel
+air di lapangan</td>
+<td align="left">Data BPS, laporan keuangan emiten, <em>dataset</em>
+Kaggle, log transaksi perusahaan</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Kelebihan</strong></td>
+<td align="left">Sesuai kebutuhan; definisi variabel dan metode
+diketahui persis</td>
+<td align="left">Murah, cepat, sering berukuran besar dan mencakup
+periode panjang</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Kelemahan</strong></td>
+<td align="left">Mahal, lama, butuh desain yang cermat</td>
+<td align="left">Definisi variabel mungkin tidak sesuai; kualitas dan
+cara pengumpulan harus diverifikasi</td>
+</tr>
+</tbody>
+</table>
+<p>Dalam data science, sebagian besar pekerjaan memakai data
+<strong>sekunder</strong> (misalnya data transaksi yang tercatat
+otomatis). Karena kita tidak mengumpulkannya sendiri,
+<strong>metadata</strong> – keterangan tentang arti tiap variabel,
+satuan, kode, periode, dan cara pengumpulan – menjadi sangat
+penting.</p>
+</div>
+<div id="menjelajahi-data-sekunder-di-r" class="section level2"
+number="2.2">
+<h2><span class="header-section-number">2.2</span> Menjelajahi Data
+Sekunder di R</h2>
+<p>R menyediakan banyak dataset sekunder bawaan beserta dokumentasinya.
+Contohnya airquality: pengukuran kualitas udara harian di New York
+(Mei–September 1973).</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">str</span>(airquality)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    153 obs. of  6 variables:
+##  $ Ozone  : int  41 36 12 18 NA 28 23 19 8 NA ...
+##  $ Solar.R: int  190 118 149 313 NA NA 299 99 19 194 ...
+##  $ Wind   : num  7.4 8 12.6 11.5 14.3 14.9 8.6 13.8 20.1 8.6 ...
+##  $ Temp   : int  67 72 74 62 56 66 65 59 61 69 ...
+##  $ Month  : int  5 5 5 5 5 5 5 5 5 5 ...
+##  $ Day    : int  1 2 3 4 5 6 7 8 9 10 ...</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">head</span>(airquality)</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Ozone"],"name":[1],"type":["int"],"align":["right"]},{"label":["Solar.R"],"name":[2],"type":["int"],"align":["right"]},{"label":["Wind"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Temp"],"name":[4],"type":["int"],"align":["right"]},{"label":["Month"],"name":[5],"type":["int"],"align":["right"]},{"label":["Day"],"name":[6],"type":["int"],"align":["right"]}],"data":[{"1":"41","2":"190","3":"7.4","4":"67","5":"5","6":"1","_rn_":"1"},{"1":"36","2":"118","3":"8.0","4":"72","5":"5","6":"2","_rn_":"2"},{"1":"12","2":"149","3":"12.6","4":"74","5":"5","6":"3","_rn_":"3"},{"1":"18","2":"313","3":"11.5","4":"62","5":"5","6":"4","_rn_":"4"},{"1":"NA","2":"NA","3":"14.3","4":"56","5":"5","6":"5","_rn_":"5"},{"1":"28","2":"NA","3":"14.9","4":"66","5":"5","6":"6","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Tanpa membaca dokumentasi (?airquality), kita tidak tahu bahwa Ozone
+diukur dalam ppb, Temp dalam <strong>°F</strong> (bukan °C), dan Month
+dikodekan 5–9 untuk Mei–September. Inilah pentingnya metadata.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>metadata_airquality <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="at">Variabel =</span> <span class="fu">names</span>(airquality),</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="at">Keterangan =</span> <span class="fu">c</span>(<span class="st">&quot;Rata-rata ozon 13.00-15.00&quot;</span>, <span class="st">&quot;Radiasi matahari 08.00-12.00&quot;</span>,</span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a><span class="st">&quot;Rata-rata kecepatan angin 07.00-10.00&quot;</span>, <span class="st">&quot;Suhu maksimum harian&quot;</span>,</span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a><span class="st">&quot;Bulan pengamatan&quot;</span>, <span class="st">&quot;Tanggal pengamatan&quot;</span>), <span class="at">Satuan =</span> <span class="fu">c</span>(<span class="st">&quot;ppb&quot;</span>, <span class="st">&quot;Langley&quot;</span>, <span class="st">&quot;mil/jam&quot;</span>, <span class="st">&quot;°F&quot;</span>, <span class="st">&quot;Kode 5-9 (Mei-Sep)&quot;</span>, <span class="st">&quot;1-31&quot;</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>)</span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(metadata_airquality, <span class="at">caption =</span> <span class="st">&quot;Kamus Data (Data Dictionary) airquality&quot;</span>)</span></code></pre></div>
+<table>
+<caption>Kamus Data (Data Dictionary) airquality</caption>
+<thead>
+<tr class="header">
+<th align="left">Variabel</th>
+<th align="left">Keterangan</th>
+<th align="left">Satuan</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Ozone</td>
+<td align="left">Rata-rata ozon 13.00-15.00</td>
+<td align="left">ppb</td>
+</tr>
+<tr class="even">
+<td align="left">Solar.R</td>
+<td align="left">Radiasi matahari 08.00-12.00</td>
+<td align="left">Langley</td>
+</tr>
+<tr class="odd">
+<td align="left">Wind</td>
+<td align="left">Rata-rata kecepatan angin 07.00-10.00</td>
+<td align="left">mil/jam</td>
+</tr>
+<tr class="even">
+<td align="left">Temp</td>
+<td align="left">Suhu maksimum harian</td>
+<td align="left">°F</td>
+</tr>
+<tr class="odd">
+<td align="left">Month</td>
+<td align="left">Bulan pengamatan</td>
+<td align="left">Kode 5-9 (Mei-Sep)</td>
+</tr>
+<tr class="even">
+<td align="left">Day</td>
+<td align="left">Tanggal pengamatan</td>
+<td align="left">1-31</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">colSums</span>(<span class="fu">is.na</span>(airquality)) <span class="co"># data sekunder sering memiliki nilai hilang (NA)</span></span></code></pre></div>
+<pre><code>##   Ozone Solar.R    Wind    Temp   Month     Day 
+##      37       7       0       0       0       0</code></pre>
+</div>
+<div id="mensimulasikan-data-primer" class="section level2"
+number="2.3">
+<h2><span class="header-section-number">2.3</span> Mensimulasikan Data
+Primer</h2>
+<p>Data primer biasanya berasal dari formulir atau kuesioner yang Anda
+rancang. Contoh: hasil formulir online yang diekspor ke CSV. Di sini isi
+CSV kita tulis langsung sebagai teks.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>csv_survei <span class="ot">&lt;-</span> <span class="st">&quot;responden,usia,jenis_kelamin,pendidikan,kepuasan,pengeluaran_bulanan</span></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="st">R01,23,P,S1,Puas,1250000</span></span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a><span class="st">R02,31,L,SMA,Sangat Puas,980000</span></span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a><span class="st">R03,27,P,S2,Netral,2100000</span></span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a><span class="st">R04,45,L,S1,Tidak Puas,1750000</span></span>
+<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a><span class="st">R05,19,P,SMA,Puas,650000</span></span>
+<span id="cb20-7"><a href="#cb20-7" tabindex="-1"></a><span class="st">R06,38,L,D3,Sangat Tidak Puas,1400000&quot;</span></span>
+<span id="cb20-8"><a href="#cb20-8" tabindex="-1"></a>survei <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">text =</span> csv_survei, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb20-9"><a href="#cb20-9" tabindex="-1"></a><span class="fu">str</span>(survei)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    6 obs. of  6 variables:
+##  $ responden          : chr  &quot;R01&quot; &quot;R02&quot; &quot;R03&quot; &quot;R04&quot; ...
+##  $ usia               : int  23 31 27 45 19 38
+##  $ jenis_kelamin      : chr  &quot;P&quot; &quot;L&quot; &quot;P&quot; &quot;L&quot; ...
+##  $ pendidikan         : chr  &quot;S1&quot; &quot;SMA&quot; &quot;S2&quot; &quot;S1&quot; ...
+##  $ kepuasan           : chr  &quot;Puas&quot; &quot;Sangat Puas&quot; &quot;Netral&quot; &quot;Tidak Puas&quot; ...
+##  $ pengeluaran_bulanan: int  1250000 980000 2100000 1750000 650000 1400000</code></pre>
+<p>Perhatikan: read.csv() membaca pendidikan dan kepuasan sebagai teks
+biasa (chr). R <strong>tidak tahu</strong> bahwa “SMA &lt; D3 &lt; S1
+&lt; S2” atau bahwa “Puas” lebih baik dari “Netral”. Informasi urutan
+itu harus kita tambahkan – inilah topik bagian berikutnya.</p>
+<hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
+</div>
+</div>
+<div id="skala-pengukuran" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Skala Pengukuran</h1>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Skala</th>
+<th align="left">Sifat baru</th>
+<th align="left">Arti</th>
+<th align="left">Contoh</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>Nominal</strong></td>
+<td align="left">Identitas</td>
+<td align="left">Nilai hanya <strong>membedakan</strong> kategori</td>
+<td align="left">Golongan darah, metode pembayaran, jenis kelamin</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Ordinal</strong></td>
+<td align="left">+ Urutan</td>
+<td align="left">Kategori dapat <strong>diurutkan</strong>, tetapi jarak
+antarkategori tidak pasti sama</td>
+<td align="left">Tingkat kepuasan, pendidikan terakhir, peringkat
+lomba</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Interval</strong></td>
+<td align="left">+ Jarak sama</td>
+<td align="left">Selisih antarnilai <strong>bermakna dan
+setara</strong>, tetapi <strong>nol tidak mutlak</strong></td>
+<td align="left">Suhu °C/°F, tahun kalender, skor IQ</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Rasio</strong></td>
+<td align="left">+ Nol mutlak</td>
+<td align="left">Nol berarti <strong>“tidak ada sama sekali”</strong>,
+sehingga <strong>perbandingan (rasio)</strong> bermakna</td>
+<td align="left">Berat, pendapatan, jumlah transaksi, suhu Kelvin</td>
+</tr>
+</tbody>
+</table>
+<div id="operasi-yang-sah-untuk-tiap-skala" class="section level2"
+number="3.1">
+<h2><span class="header-section-number">3.1</span> Operasi yang Sah
+untuk Tiap Skala</h2>
+<table>
+<colgroup>
+<col width="16%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Operasi / Statistik</th>
+<th align="center">Nominal</th>
+<th align="center">Ordinal</th>
+<th align="center">Interval</th>
+<th align="center">Rasio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Frekuensi, modus</td>
+<td align="center">Ya</td>
+<td align="center">Ya</td>
+<td align="center">Ya</td>
+<td align="center">Ya</td>
+</tr>
+<tr class="even">
+<td align="left">Mengurutkan, median, persentil</td>
+<td align="center">Tidak</td>
+<td align="center">Ya</td>
+<td align="center">Ya</td>
+<td align="center">Ya</td>
+</tr>
+<tr class="odd">
+<td align="left">Penjumlahan/selisih, mean, simpangan baku</td>
+<td align="center">Tidak</td>
+<td align="center">Diperdebatkan</td>
+<td align="center">Ya</td>
+<td align="center">Ya</td>
+</tr>
+<tr class="even">
+<td align="left">Perbandingan “dua kali lipat”, koefisien variasi</td>
+<td align="center">Tidak</td>
+<td align="center">Tidak</td>
+<td align="center">Tidak</td>
+<td align="center">Ya</td>
+</tr>
+</tbody>
+</table>
+<p>Tabel ini akan terus kita pakai: pada Pertemuan 5 untuk memilih
+ukuran pemusatan, dan pada paruh kedua semester untuk memilih uji
+statistik.</p>
+</div>
+<div id="nominal-angka-hanya-sebagai-label" class="section level2"
+number="3.2">
+<h2><span class="header-section-number">3.2</span> Nominal: Angka Hanya
+Sebagai Label</h2>
+<p>Jika kategori nominal dikodekan dengan angka, R akan dengan senang
+hati menghitung rata- ratanya – dan hasilnya tidak bermakna.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="co"># Kode provinsi: 31 = DKI Jakarta, 32 = Jawa Barat, 33 = Jawa Tengah, 73 = Sulawesi Selatan</span></span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>kode_prov <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">32</span>, <span class="dv">32</span>, <span class="dv">31</span>, <span class="dv">73</span>, <span class="dv">33</span>, <span class="dv">32</span>, <span class="dv">31</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a><span class="fu">mean</span>(kode_prov) <span class="co"># &quot;rata-rata provinsi&quot; = 36,3 -&gt; tidak bermakna!</span></span></code></pre></div>
+<pre><code>## [1] 37.71429</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="co"># Perlakukan sebagai kategori</span></span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a>prov <span class="ot">&lt;-</span> <span class="fu">factor</span>(kode_prov, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">31</span>, <span class="dv">32</span>, <span class="dv">33</span>, <span class="dv">73</span>),</span>
+<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" tabindex="-1"></a><span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;DKI Jakarta&quot;</span>, <span class="st">&quot;Jawa Barat&quot;</span>, <span class="st">&quot;Jawa Tengah&quot;</span>, <span class="st">&quot;Sulawesi Selatan&quot;</span>))</span>
+<span id="cb24-5"><a href="#cb24-5" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" tabindex="-1"></a><span class="fu">table</span>(prov)</span></code></pre></div>
+<pre><code>## prov
+##      DKI Jakarta       Jawa Barat      Jawa Tengah Sulawesi Selatan 
+##                2                3                1                1</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">names</span>(<span class="fu">which.max</span>(<span class="fu">table</span>(prov))) <span class="co"># modus: satu-satunya ukuran pusat yang sah</span></span></code></pre></div>
+<pre><code>## [1] &quot;Jawa Barat&quot;</code></pre>
+</div>
+<div id="ordinal-berurutan-jarak-tidak-pasti" class="section level2"
+number="3.3">
+<h2><span class="header-section-number">3.3</span> Ordinal: Berurutan,
+Jarak Tidak Pasti</h2>
+<p>Pada skala kepuasan “Sangat Tidak Puas – Tidak Puas – Netral – Puas –
+Sangat Puas”, kita tahu urutannya, tetapi <strong>tidak</strong> tahu
+apakah jarak “Netral ke Puas” sama dengan jarak “Puas ke Sangat
+Puas”.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a>tingkat_puas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Sangat Tidak Puas&quot;</span>, <span class="st">&quot;Tidak Puas&quot;</span>, <span class="st">&quot;Netral&quot;</span>, <span class="st">&quot;Puas&quot;</span>, <span class="st">&quot;Sangat Puas&quot;</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>survei<span class="sc">$</span>kepuasan <span class="ot">&lt;-</span> <span class="fu">factor</span>(survei<span class="sc">$</span>kepuasan, <span class="at">levels =</span> tingkat_puas, <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a>survei<span class="sc">$</span>pendidikan <span class="ot">&lt;-</span> <span class="fu">factor</span>(survei<span class="sc">$</span>pendidikan, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;SMA&quot;</span>, <span class="st">&quot;D3&quot;</span>, <span class="st">&quot;S1&quot;</span>, <span class="st">&quot;S2&quot;</span>),</span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a><span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="#cb28-7" tabindex="-1"></a>survei<span class="sc">$</span>kepuasan</span></code></pre></div>
+<pre><code>## [1] Puas              Sangat Puas       Netral            Tidak Puas       
+## [5] Puas              Sangat Tidak Puas
+## Levels: Sangat Tidak Puas &lt; Tidak Puas &lt; Netral &lt; Puas &lt; Sangat Puas</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a>survei<span class="sc">$</span>kepuasan <span class="sc">&gt;</span> <span class="st">&quot;Netral&quot;</span> <span class="co"># perbandingan urutan kini sah</span></span></code></pre></div>
+<pre><code>## [1]  TRUE  TRUE FALSE FALSE  TRUE FALSE</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="fu">table</span>(survei<span class="sc">$</span>kepuasan)</span></code></pre></div>
+<pre><code>## 
+## Sangat Tidak Puas        Tidak Puas            Netral              Puas 
+##                 1                 1                 1                 2 
+##       Sangat Puas 
+##                 1</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="co"># Median untuk data ordinal: kategori tengah setelah diurutkan.</span></span>
+<span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a><span class="co"># Jika n genap dan dua data tengah berbeda kategori, median berada &quot;di antara&quot; keduanya.</span></span>
+<span id="cb34-3"><a href="#cb34-3" tabindex="-1"></a>median_ordinal <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb34-4"><a href="#cb34-4" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">median</span>(<span class="fu">as.integer</span>(x), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb34-5"><a href="#cb34-5" tabindex="-1"></a><span class="cf">if</span> (m <span class="sc">==</span> <span class="fu">floor</span>(m)) <span class="fu">return</span>(<span class="fu">levels</span>(x)[m])</span>
+<span id="cb34-6"><a href="#cb34-6" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">&quot;antara&quot;</span>, <span class="fu">levels</span>(x)[<span class="fu">floor</span>(m)], <span class="st">&quot;dan&quot;</span>, <span class="fu">levels</span>(x)[<span class="fu">ceiling</span>(m)])</span>
+<span id="cb34-7"><a href="#cb34-7" tabindex="-1"></a>}</span>
+<span id="cb34-8"><a href="#cb34-8" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">as.integer</span>(survei<span class="sc">$</span>kepuasan)) <span class="co"># posisi urutan tiap responden</span></span></code></pre></div>
+<pre><code>## [1] 1 2 3 4 4 5</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a><span class="do">## [1] 1 2 3 4 4 5</span></span>
+<span id="cb36-2"><a href="#cb36-2" tabindex="-1"></a><span class="fu">median_ordinal</span>(survei<span class="sc">$</span>kepuasan)</span></code></pre></div>
+<pre><code>## [1] &quot;antara Netral dan Puas&quot;</code></pre>
+<p><strong>Likert: mean atau median?</strong> Skor Likert (1–5) dari
+<strong>satu butir pertanyaan</strong> secara ketat bersifat ordinal,
+sehingga median dan modus lebih tepat. Dalam praktik, <strong>jumlah
+atau rata-rata dari banyak butir</strong> (misalnya indeks kepuasan dari
+10 pertanyaan) sering diperlakukan sebagai data interval. Apa pun
+pilihannya, <strong>nyatakan asumsi Anda.</strong></p>
+</div>
+<div id="interval-selisih-bermakna-rasio-tidak" class="section level2"
+number="3.4">
+<h2><span class="header-section-number">3.4</span> Interval: Selisih
+Bermakna, Rasio Tidak</h2>
+<p>Suhu dalam °C memiliki jarak yang setara (naik dari 10 ke 20 °C sama
+besarnya dengan dari 20 ke 30 °C), tetapi titik 0 °C
+<strong>bukan</strong> “tidak ada panas” – hanya titik beku air yang
+dipilih secara konvensi. Akibatnya, “20 °C dua kali lebih panas dari 10
+°C” adalah pernyataan <strong>keliru</strong>.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a>suhu_c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">pagi =</span> <span class="dv">10</span>, <span class="at">siang =</span> <span class="dv">20</span>)</span>
+<span id="cb38-2"><a href="#cb38-2" tabindex="-1"></a>suhu_f <span class="ot">&lt;-</span> suhu_c <span class="sc">*</span> <span class="dv">9</span> <span class="sc">/</span> <span class="dv">5</span> <span class="sc">+</span> <span class="dv">32</span></span>
+<span id="cb38-3"><a href="#cb38-3" tabindex="-1"></a>suhu_k <span class="ot">&lt;-</span> suhu_c <span class="sc">+</span> <span class="fl">273.15</span></span>
+<span id="cb38-4"><a href="#cb38-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">data.frame</span>(</span>
+<span id="cb38-5"><a href="#cb38-5" tabindex="-1"></a><span class="at">Satuan =</span> <span class="fu">c</span>(<span class="st">&quot;Celsius&quot;</span>, <span class="st">&quot;Fahrenheit&quot;</span>, <span class="st">&quot;Kelvin&quot;</span>),</span>
+<span id="cb38-6"><a href="#cb38-6" tabindex="-1"></a><span class="at">Pagi =</span> <span class="fu">c</span>(suhu_c[<span class="st">&quot;pagi&quot;</span>], suhu_f[<span class="st">&quot;pagi&quot;</span>], suhu_k[<span class="st">&quot;pagi&quot;</span>]),</span>
+<span id="cb38-7"><a href="#cb38-7" tabindex="-1"></a><span class="at">Siang =</span> <span class="fu">c</span>(suhu_c[<span class="st">&quot;siang&quot;</span>], suhu_f[<span class="st">&quot;siang&quot;</span>], suhu_k[<span class="st">&quot;siang&quot;</span>]),</span>
+<span id="cb38-8"><a href="#cb38-8" tabindex="-1"></a><span class="at">Rasio_Siang_per_Pagi =</span> <span class="fu">round</span>(<span class="fu">c</span>(suhu_c[<span class="st">&quot;siang&quot;</span>] <span class="sc">/</span> suhu_c[<span class="st">&quot;pagi&quot;</span>],</span>
+<span id="cb38-9"><a href="#cb38-9" tabindex="-1"></a>suhu_f[<span class="st">&quot;siang&quot;</span>] <span class="sc">/</span> suhu_f[<span class="st">&quot;pagi&quot;</span>],</span>
+<span id="cb38-10"><a href="#cb38-10" tabindex="-1"></a>suhu_k[<span class="st">&quot;siang&quot;</span>] <span class="sc">/</span> suhu_k[<span class="st">&quot;pagi&quot;</span>]), <span class="dv">3</span>),</span>
+<span id="cb38-11"><a href="#cb38-11" tabindex="-1"></a></span>
+<span id="cb38-12"><a href="#cb38-12" tabindex="-1"></a><span class="at">Selisih =</span> <span class="fu">c</span>(<span class="fu">diff</span>(suhu_c), <span class="fu">diff</span>(suhu_f), <span class="fu">diff</span>(suhu_k))</span>
+<span id="cb38-13"><a href="#cb38-13" tabindex="-1"></a>), <span class="at">caption =</span> <span class="st">&quot;Suhu yang sama dalam tiga satuan&quot;</span>)</span></code></pre></div>
+<table>
+<caption>Suhu yang sama dalam tiga satuan</caption>
+<thead>
+<tr class="header">
+<th align="left">Satuan</th>
+<th align="right">Pagi</th>
+<th align="right">Siang</th>
+<th align="right">Rasio_Siang_per_Pagi</th>
+<th align="right">Selisih</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Celsius</td>
+<td align="right">10.00</td>
+<td align="right">20.00</td>
+<td align="right">2.000</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="left">Fahrenheit</td>
+<td align="right">50.00</td>
+<td align="right">68.00</td>
+<td align="right">1.360</td>
+<td align="right">18</td>
+</tr>
+<tr class="odd">
+<td align="left">Kelvin</td>
+<td align="right">283.15</td>
+<td align="right">293.15</td>
+<td align="right">1.035</td>
+<td align="right">10</td>
+</tr>
+</tbody>
+</table>
+<p>“Rasio” suhu berubah-ubah tergantung satuan (2 kali dalam °C, 1,36
+kali dalam °F, 1,035 kali dalam Kelvin) – tanda bahwa rasio pada skala
+interval <strong>tidak bermakna</strong>. Hanya Kelvin, yang nolnya
+mutlak, yang merupakan skala rasio.</p>
+</div>
+<div id="rasio-semua-operasi-sah" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Rasio: Semua Operasi
+Sah</h2>
+<p>Pada skala rasio, perbandingan <strong>tetap sama</strong> berapa pun
+satuannya.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a>berat_kg <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">koper_A =</span> <span class="dv">10</span>, <span class="at">koper_B =</span> <span class="dv">20</span>)</span>
+<span id="cb39-2"><a href="#cb39-2" tabindex="-1"></a>berat_lb <span class="ot">&lt;-</span> berat_kg <span class="sc">*</span> <span class="fl">2.20462</span></span>
+<span id="cb39-3"><a href="#cb39-3" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Rasio_kg =</span> <span class="fu">unname</span>(berat_kg[<span class="st">&quot;koper_B&quot;</span>] <span class="sc">/</span> berat_kg[<span class="st">&quot;koper_A&quot;</span>]),</span>
+<span id="cb39-4"><a href="#cb39-4" tabindex="-1"></a><span class="at">Rasio_lb =</span> <span class="fu">unname</span>(berat_lb[<span class="st">&quot;koper_B&quot;</span>] <span class="sc">/</span> berat_lb[<span class="st">&quot;koper_A&quot;</span>]))</span></code></pre></div>
+<pre><code>## Rasio_kg Rasio_lb 
+##        2        2</code></pre>
+<p>Koper B <strong>benar-benar</strong> dua kali lebih berat dari koper
+A, dalam satuan apa pun. Karena itu koefisien variasi (Pertemuan 5)
+hanya sah untuk skala rasio.</p>
+</div>
+<div id="menentukan-skala-empat-pertanyaan-berurutan"
+class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> Menentukan Skala:
+Empat Pertanyaan Berurutan</h2>
+<table>
+<colgroup>
+<col width="29%" />
+<col width="23%" />
+<col width="23%" />
+<col width="23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Langkah</th>
+<th align="left">Pertanyaan</th>
+<th align="left">Jika “Tidak”</th>
+<th align="left">Jika “Ya”</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="left">Apakah nilainya dapat diurutkan secara bermakna?</td>
+<td align="left"><strong>Nominal</strong></td>
+<td align="left">Lanjut ke 2</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="left">Apakah jarak antarnilai setara dan bermakna?</td>
+<td align="left"><strong>Ordinal</strong></td>
+<td align="left">Lanjut ke 3</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="left">Apakah nol berarti “tidak ada sama sekali”?</td>
+<td align="left"><strong>Interval</strong></td>
+<td align="left"><strong>Rasio</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a>tentukan_skala <span class="ot">&lt;-</span> <span class="cf">function</span>(bisa_diurutkan, jarak_setara, nol_mutlak) {</span>
+<span id="cb41-2"><a href="#cb41-2" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span>bisa_diurutkan) <span class="fu">return</span>(<span class="st">&quot;Nominal&quot;</span>)</span>
+<span id="cb41-3"><a href="#cb41-3" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span>jarak_setara) <span class="fu">return</span>(<span class="st">&quot;Ordinal&quot;</span>)</span>
+<span id="cb41-4"><a href="#cb41-4" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span>nol_mutlak) <span class="fu">return</span>(<span class="st">&quot;Interval&quot;</span>)</span>
+<span id="cb41-5"><a href="#cb41-5" tabindex="-1"></a><span class="st">&quot;Rasio&quot;</span></span>
+<span id="cb41-6"><a href="#cb41-6" tabindex="-1"></a>}</span>
+<span id="cb41-7"><a href="#cb41-7" tabindex="-1"></a>contoh <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb41-8"><a href="#cb41-8" tabindex="-1"></a><span class="at">Variabel =</span> <span class="fu">c</span>(<span class="st">&quot;Golongan darah&quot;</span>, <span class="st">&quot;Peringkat lomba&quot;</span>, <span class="st">&quot;Tahun lahir&quot;</span>, <span class="st">&quot;Jumlah Transaksi QRIS&quot;</span>, <span class="st">&quot;Kadar TSS air (mg/L)&quot;</span>, <span class="st">&quot;Ukuran baju (S/M/L/XL)&quot;</span>),</span>
+<span id="cb41-9"><a href="#cb41-9" tabindex="-1"></a></span>
+<span id="cb41-10"><a href="#cb41-10" tabindex="-1"></a><span class="at">urut =</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>),</span>
+<span id="cb41-11"><a href="#cb41-11" tabindex="-1"></a><span class="at">jarak =</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>),</span>
+<span id="cb41-12"><a href="#cb41-12" tabindex="-1"></a><span class="at">nol =</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb41-13"><a href="#cb41-13" tabindex="-1"></a>)</span>
+<span id="cb41-14"><a href="#cb41-14" tabindex="-1"></a>contoh<span class="sc">$</span>Skala <span class="ot">&lt;-</span> <span class="fu">mapply</span>(tentukan_skala, contoh<span class="sc">$</span>urut, contoh<span class="sc">$</span>jarak, contoh<span class="sc">$</span>nol)</span>
+<span id="cb41-15"><a href="#cb41-15" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(contoh, <span class="at">caption =</span> <span class="st">&quot;Contoh Penentuan Skala Pengukuran&quot;</span>)</span></code></pre></div>
+<table>
+<caption>Contoh Penentuan Skala Pengukuran</caption>
+<thead>
+<tr class="header">
+<th align="left">Variabel</th>
+<th align="left">urut</th>
+<th align="left">jarak</th>
+<th align="left">nol</th>
+<th align="left">Skala</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Golongan darah</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Nominal</td>
+</tr>
+<tr class="even">
+<td align="left">Peringkat lomba</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Ordinal</td>
+</tr>
+<tr class="odd">
+<td align="left">Tahun lahir</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">Interval</td>
+</tr>
+<tr class="even">
+<td align="left">Jumlah Transaksi QRIS</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">Rasio</td>
+</tr>
+<tr class="odd">
+<td align="left">Kadar TSS air (mg/L)</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">Rasio</td>
+</tr>
+<tr class="even">
+<td align="left">Ukuran baju (S/M/L/XL)</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Ordinal</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="skala-dan-tipe-data-di-r" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Skala dan Tipe Data di
+R</h1>
+<div id="memetakan-skala-ke-tipe-data" class="section level2"
+number="4.1">
+<h2><span class="header-section-number">4.1</span> Memetakan Skala ke
+Tipe Data</h2>
+<table>
+<colgroup>
+<col width="29%" />
+<col width="23%" />
+<col width="23%" />
+<col width="23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Langkah</th>
+<th align="left">Pertanyaan</th>
+<th align="left">Jika “Tidak”</th>
+<th align="left">Jika “Ya”</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="left">Apakah nilainya dapat diurutkan secara bermakna?</td>
+<td align="left"><strong>Nominal</strong></td>
+<td align="left">Lanjut ke 2</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="left">Apakah jarak antarnilai setara dan bermakna?</td>
+<td align="left"><strong>Ordinal</strong></td>
+<td align="left">Lanjut ke 3</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="left">Apakah nol berarti “tidak ada sama sekali”?</td>
+<td align="left"><strong>Interval</strong></td>
+<td align="left"><strong>Rasio</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Tipe yang tepat membuat R <strong>membantu</strong> kita: grafik
+mengikuti urutan kategori, fungsi ringkasan memilih cara yang benar, dan
+model statistik memperlakukan variabel dengan semestinya.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a><span class="fu">summary</span>(survei<span class="sc">$</span>kepuasan) <span class="co"># ordered factor -&gt; frekuensi per kategori, sesuai urutan</span></span></code></pre></div>
+<pre><code>## Sangat Tidak Puas        Tidak Puas            Netral              Puas 
+##                 1                 1                 1                 2 
+##       Sangat Puas 
+##                 1</code></pre>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" tabindex="-1"></a><span class="fu">summary</span>(survei<span class="sc">$</span>pengeluaran_bulanan) <span class="co"># numeric -&gt; ringkasan angka</span></span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  650000 1047500 1325000 1355000 1662500 2100000</code></pre>
+</div>
+<div id="urutan-level-yang-keliru" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Urutan Level yang
+Keliru</h2>
+<p>Tanpa urutan yang ditentukan, R mengurutkan kategori <strong>menurut
+abjad</strong>, yang sering tidak logis:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" tabindex="-1"></a>ukuran_baju <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;M&quot;</span>, <span class="st">&quot;L&quot;</span>, <span class="st">&quot;S&quot;</span>, <span class="st">&quot;XL&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;L&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;S&quot;</span>, <span class="st">&quot;XL&quot;</span>, <span class="st">&quot;L&quot;</span>, <span class="st">&quot;M&quot;</span>)</span>
+<span id="cb46-2"><a href="#cb46-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb46-3"><a href="#cb46-3" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(<span class="fu">factor</span>(ukuran_baju)), <span class="at">col =</span> <span class="st">&quot;grey70&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Urutan abjad (keliru)&quot;</span>)</span>
+<span id="cb46-4"><a href="#cb46-4" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(<span class="fu">factor</span>(ukuran_baju, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;S&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;L&quot;</span>, <span class="st">&quot;XL&quot;</span>))), <span class="at">col =</span> <span class="st">&quot;#4C72B0&quot;</span>,</span>
+<span id="cb46-5"><a href="#cb46-5" tabindex="-1"></a><span class="at">main =</span> <span class="st">&quot;Urutan logis (benar)&quot;</span>)</span></code></pre></div>
+<p><img src="P02_Jenis_Data_dan_Skala_Pengukuran_files/figure-html/unnamed-chunk-25-1.png" alt="" width="768" /></p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+</div>
+<div id="jebakan-mengonversi-factor-berisi-angka" class="section level2"
+number="4.3">
+<h2><span class="header-section-number">4.3</span> Jebakan: Mengonversi
+Factor Berisi Angka</h2>
+<p>Jika sebuah factor berisi angka, as.numeric() mengembalikan
+<strong>nomor urut level</strong>, bukan angkanya.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" tabindex="-1"></a>tahun <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">&quot;2021&quot;</span>, <span class="st">&quot;2023&quot;</span>, <span class="st">&quot;2021&quot;</span>, <span class="st">&quot;2024&quot;</span>))</span>
+<span id="cb48-2"><a href="#cb48-2" tabindex="-1"></a><span class="fu">as.numeric</span>(tahun) <span class="co"># SALAH: 1 2 1 3 (nomor level)</span></span></code></pre></div>
+<pre><code>## [1] 1 2 1 3</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="fu">as.character</span>(tahun)) <span class="co"># BENAR: 2021 2023 2021 2024</span></span></code></pre></div>
+<pre><code>## [1] 2021 2023 2021 2024</code></pre>
+</div>
+<div id="jebakan-angka-tersimpan-sebagai-teks" class="section level2"
+number="4.4">
+<h2><span class="header-section-number">4.4</span> Jebakan: Angka
+Tersimpan sebagai Teks</h2>
+<p>Data dari formulir atau spreadsheet sering memuat simbol (Rp, titik
+ribuan, koma desimal) sehingga terbaca sebagai teks.</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" tabindex="-1"></a>harga_teks <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Rp 12.500&quot;</span>, <span class="st">&quot;Rp 8.000&quot;</span>, <span class="st">&quot;Rp 150.000&quot;</span>, <span class="st">&quot;Rp 27.250&quot;</span>)</span>
+<span id="cb52-2"><a href="#cb52-2" tabindex="-1"></a><span class="co"># mean(harga_teks) akan menghasilkan NA disertai peringatan</span></span>
+<span id="cb52-3"><a href="#cb52-3" tabindex="-1"></a>harga <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;[^0-9]&quot;</span>, <span class="st">&quot;&quot;</span>, harga_teks)) <span class="co"># buang semua karakter non-angka </span></span>
+<span id="cb52-4"><a href="#cb52-4" tabindex="-1"></a>harga</span></code></pre></div>
+<pre><code>## [1]  12500   8000 150000  27250</code></pre>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" tabindex="-1"></a><span class="fu">mean</span>(harga)</span></code></pre></div>
+<pre><code>## [1] 49437.5</code></pre>
+<hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
+</div>
+</div>
+<div id="struktur-dataset" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Struktur Dataset</h1>
+<div id="observasi-variabel-feature-dan-target" class="section level2"
+number="5.1">
+<h2><span class="header-section-number">5.1</span> Observasi, Variabel,
+Feature, dan Target</h2>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Istilah statistika</th>
+<th align="left">Istilah <em>machine learning</em></th>
+<th align="left">Posisi dalam tabel</th>
+<th align="left">Contoh</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>Observasi</strong> (unit observasi, kasus)</td>
+<td align="left"><em>Instance</em>, <em>sample</em>,
+<em>record</em></td>
+<td align="left">Baris</td>
+<td align="left">Satu bunga iris</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Variabel</strong></td>
+<td align="left"><em>Attribute</em>, <em>column</em></td>
+<td align="left">Kolom</td>
+<td align="left">Panjang kelopak</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Variabel independen</strong></td>
+<td align="left"><strong><em>Feature</em></strong> (prediktor, <span
+class="math inline">\(X\)</span>)</td>
+<td align="left">Kolom yang dipakai untuk memprediksi</td>
+<td align="left">Panjang dan lebar kelopak/mahkota</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Variabel dependen</strong></td>
+<td align="left"><strong><em>Target</em></strong> (label, respons, <span
+class="math inline">\(y\)</span>)</td>
+<td align="left">Kolom yang ingin diprediksi</td>
+<td align="left">Spesies</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" tabindex="-1"></a><span class="fu">str</span>(iris)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    150 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" tabindex="-1"></a>X <span class="ot">&lt;-</span> iris[, <span class="fu">c</span>(<span class="st">&quot;Sepal.Length&quot;</span>, <span class="st">&quot;Sepal.Width&quot;</span>, <span class="st">&quot;Petal.Length&quot;</span>, <span class="st">&quot;Petal.Width&quot;</span>)] <span class="co">#feature</span></span>
+<span id="cb58-2"><a href="#cb58-2" tabindex="-1"></a>y <span class="ot">&lt;-</span> iris<span class="sc">$</span>Species <span class="co">#target</span></span>
+<span id="cb58-3"><a href="#cb58-3" tabindex="-1"></a><span class="fu">dim</span>(X) <span class="co"># 150 observasi x 4 feature</span></span></code></pre></div>
+<pre><code>## [1] 150   4</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" tabindex="-1"></a><span class="fu">table</span>(y) <span class="co"># target kategorik (3 kelas)</span></span></code></pre></div>
+<pre><code>## y
+##     setosa versicolor  virginica 
+##         50         50         50</code></pre>
+<p><strong>Jenis target menentukan jenis tugas:</strong> | Skala target
+| Tugas | Contoh | |:—|:—|:—| | Nominal (2 kategori) | Klasifikasi biner
+| Pelanggan <em>churn</em> atau tidak | | Nominal (&gt; 2 kategori) |
+Klasifikasi multikelas | Spesies iris | | Ordinal | Klasifikasi ordinal
+| Tingkat risiko kredit rendah/sedang/tinggi | | Interval/rasio |
+Regresi | Harga rumah, kadar TSS |</p>
+</div>
+<div id="tidy-data" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Tidy Data</h2>
+<p>Sebuah dataset disebut tidy jika memenuhi tiga prinsip:</p>
+<ol style="margin-left:10px;">
+<li>
+Setiap <strong>variabel</strong> menempati satu <strong>kolom</strong>.
+</li>
+<li>
+Setiap <strong>observasi</strong> menempati satu <strong>baris</strong>.
+</li>
+<li>
+Setiap <strong>nilai</strong> menempati satu <strong>sel</strong>.
+</li>
+</ol>
+<p>Hampir semua fungsi statistika di R mengasumsikan data
+<em>tidy.</em></p>
+</div>
+<div id="format-wide-vs-long" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Format Wide vs
+Long</h2>
+<p>Data yang sama dapat disusun dalam dua format. Contoh: kadar TSS
+(mg/L) di tiga titik peman- tauan selama tiga bulan.</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" tabindex="-1"></a>tss_wide <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb62-2"><a href="#cb62-2" tabindex="-1"></a><span class="at">titik =</span> <span class="fu">c</span>(<span class="st">&quot;Hulu&quot;</span>, <span class="st">&quot;Tengah&quot;</span>, <span class="st">&quot;Hilir&quot;</span>),</span>
+<span id="cb62-3"><a href="#cb62-3" tabindex="-1"></a><span class="at">Jan =</span> <span class="fu">c</span>(<span class="dv">45</span>, <span class="dv">120</span>, <span class="dv">210</span>),</span>
+<span id="cb62-4"><a href="#cb62-4" tabindex="-1"></a><span class="at">Feb =</span> <span class="fu">c</span>(<span class="dv">38</span>, <span class="dv">95</span>, <span class="dv">185</span>),</span>
+<span id="cb62-5"><a href="#cb62-5" tabindex="-1"></a><span class="at">Mar =</span> <span class="fu">c</span>(<span class="dv">52</span>, <span class="dv">140</span>, <span class="dv">260</span>)</span>
+<span id="cb62-6"><a href="#cb62-6" tabindex="-1"></a>)</span>
+<span id="cb62-7"><a href="#cb62-7" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(tss_wide, <span class="at">caption =</span> <span class="st">&quot;Format WIDE: bulan tersebar sebagai kolom&quot;</span>)</span></code></pre></div>
+<table>
+<caption>Format WIDE: bulan tersebar sebagai kolom</caption>
+<thead>
+<tr class="header">
+<th align="left">titik</th>
+<th align="right">Jan</th>
+<th align="right">Feb</th>
+<th align="right">Mar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Hulu</td>
+<td align="right">45</td>
+<td align="right">38</td>
+<td align="right">52</td>
+</tr>
+<tr class="even">
+<td align="left">Tengah</td>
+<td align="right">120</td>
+<td align="right">95</td>
+<td align="right">140</td>
+</tr>
+<tr class="odd">
+<td align="left">Hilir</td>
+<td align="right">210</td>
+<td align="right">185</td>
+<td align="right">260</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" tabindex="-1"></a>tss_long <span class="ot">&lt;-</span> <span class="fu">reshape</span>(tss_wide, <span class="at">direction =</span> <span class="st">&quot;long&quot;</span>,</span>
+<span id="cb63-2"><a href="#cb63-2" tabindex="-1"></a></span>
+<span id="cb63-3"><a href="#cb63-3" tabindex="-1"></a><span class="at">varying =</span> <span class="fu">c</span>(<span class="st">&quot;Jan&quot;</span>, <span class="st">&quot;Feb&quot;</span>, <span class="st">&quot;Mar&quot;</span>), <span class="at">v.names =</span> <span class="st">&quot;tss&quot;</span>,</span>
+<span id="cb63-4"><a href="#cb63-4" tabindex="-1"></a><span class="at">timevar =</span> <span class="st">&quot;bulan&quot;</span>, <span class="at">times =</span> <span class="fu">c</span>(<span class="st">&quot;Jan&quot;</span>, <span class="st">&quot;Feb&quot;</span>, <span class="st">&quot;Mar&quot;</span>), <span class="at">idvar =</span> <span class="st">&quot;titik&quot;</span>)</span>
+<span id="cb63-5"><a href="#cb63-5" tabindex="-1"></a><span class="fu">rownames</span>(tss_long) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb63-6"><a href="#cb63-6" tabindex="-1"></a>tss_long<span class="sc">$</span>bulan <span class="ot">&lt;-</span> <span class="fu">factor</span>(tss_long<span class="sc">$</span>bulan, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Jan&quot;</span>, <span class="st">&quot;Feb&quot;</span>, <span class="st">&quot;Mar&quot;</span>))</span>
+<span id="cb63-7"><a href="#cb63-7" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(tss_long, <span class="at">caption =</span> <span class="st">&quot;Format LONG (tidy): satu baris = satu pengukuran&quot;</span>)</span></code></pre></div>
+<table>
+<caption>Format LONG (tidy): satu baris = satu pengukuran</caption>
+<thead>
+<tr class="header">
+<th align="left">titik</th>
+<th align="left">bulan</th>
+<th align="right">tss</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Hulu</td>
+<td align="left">Jan</td>
+<td align="right">45</td>
+</tr>
+<tr class="even">
+<td align="left">Tengah</td>
+<td align="left">Jan</td>
+<td align="right">120</td>
+</tr>
+<tr class="odd">
+<td align="left">Hilir</td>
+<td align="left">Jan</td>
+<td align="right">210</td>
+</tr>
+<tr class="even">
+<td align="left">Hulu</td>
+<td align="left">Feb</td>
+<td align="right">38</td>
+</tr>
+<tr class="odd">
+<td align="left">Tengah</td>
+<td align="left">Feb</td>
+<td align="right">95</td>
+</tr>
+<tr class="even">
+<td align="left">Hilir</td>
+<td align="left">Feb</td>
+<td align="right">185</td>
+</tr>
+<tr class="odd">
+<td align="left">Hulu</td>
+<td align="left">Mar</td>
+<td align="right">52</td>
+</tr>
+<tr class="even">
+<td align="left">Tengah</td>
+<td align="left">Mar</td>
+<td align="right">140</td>
+</tr>
+<tr class="odd">
+<td align="left">Hilir</td>
+<td align="left">Mar</td>
+<td align="right">260</td>
+</tr>
+</tbody>
+</table>
+<p>Pada format wide, satu variabel (bulan) tersembunyi di nama-nama
+kolom. Format long bersifat tidy: setiap baris adalah <strong>satu
+pengukuran</strong> (titik x bulan), sehingga mudah diringkas per
+kelompok:</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" tabindex="-1"></a><span class="fu">aggregate</span>(tss <span class="sc">~</span> titik, <span class="at">data =</span> tss_long, <span class="at">FUN =</span> mean)</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["titik"],"name":[1],"type":["chr"],"align":["left"]},{"label":["tss"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Hilir","2":"218.3333"},{"1":"Hulu","2":"45.0000"},{"1":"Tengah","2":"118.3333"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" tabindex="-1"></a><span class="fu">aggregate</span>(tss <span class="sc">~</span> bulan, <span class="at">data =</span> tss_long, <span class="at">FUN =</span> mean)</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["bulan"],"name":[1],"type":["fct"],"align":["left"]},{"label":["tss"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Jan","2":"125.0000"},{"1":"Feb","2":"106.0000"},{"1":"Mar","2":"150.6667"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Format wide tetap berguna untuk <strong>menyajikan</strong> tabel
+kepada pembaca manusia; format long lebih cocok untuk
+<strong>analisis.</strong></p>
+<hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
+</div>
+</div>
+<div id="studi-kasus-komprehensif-membersihkan-data-pelanggan"
+class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Studi Kasus
+Komprehensif: Membersihkan Data Pelanggan</h1>
+<p><strong>Konteks</strong>: Tim analytics sebuah e-commerce menerima
+ekspor data pelanggan (data <strong>sekunder</strong> dari sistem CRM)
+untuk membangun model prediksi churn (pelanggan berhenti berlangganan).
+Datanya masih “mentah”.</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" tabindex="-1"></a>csv_pelanggan <span class="ot">&lt;-</span> <span class="st">&quot;id,gender,kota,segmen,rating_layanan,lama_langganan_bln,total_belanja,suhu_gudang_c,churn</span></span>
+<span id="cb66-2"><a href="#cb66-2" tabindex="-1"></a><span class="st">C001,1,Bekasi,Gold,4,26,Rp 4.250.000,24.5,Tidak</span></span>
+<span id="cb66-3"><a href="#cb66-3" tabindex="-1"></a><span class="st">C002,2,Bandung,Silver,2,5,Rp 850.000,25.1,Ya</span></span>
+<span id="cb66-4"><a href="#cb66-4" tabindex="-1"></a><span class="st">C003,2,Bekasi,Platinum,5,48,Rp 12.900.000,23.8,Tidak</span></span>
+<span id="cb66-5"><a href="#cb66-5" tabindex="-1"></a><span class="st">C004,1,Surabaya,Silver,3,12,Rp 1.320.000,26.0,Tidak</span></span>
+<span id="cb66-6"><a href="#cb66-6" tabindex="-1"></a><span class="st">C005,1,Bandung,Bronze,1,3,Rp 210.000,24.9,Ya</span></span>
+<span id="cb66-7"><a href="#cb66-7" tabindex="-1"></a><span class="st">C006,2,Medan,Gold,4,30,Rp 5.100.000,25.4,Tidak</span></span>
+<span id="cb66-8"><a href="#cb66-8" tabindex="-1"></a><span class="st">C007,1,Bekasi,Bronze,2,7,Rp 480.000,24.2,Ya</span></span>
+<span id="cb66-9"><a href="#cb66-9" tabindex="-1"></a><span class="st">C008,2,Surabaya,Platinum,5,60,Rp 15.750.000,25.7,Tidak&quot;</span></span>
+<span id="cb66-10"><a href="#cb66-10" tabindex="-1"></a>pelanggan <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">text =</span> csv_pelanggan, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb66-11"><a href="#cb66-11" tabindex="-1"></a><span class="fu">str</span>(pelanggan)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    8 obs. of  9 variables:
+##  $ id                : chr  &quot;C001&quot; &quot;C002&quot; &quot;C003&quot; &quot;C004&quot; ...
+##  $ gender            : int  1 2 2 1 1 2 1 2
+##  $ kota              : chr  &quot;Bekasi&quot; &quot;Bandung&quot; &quot;Bekasi&quot; &quot;Surabaya&quot; ...
+##  $ segmen            : chr  &quot;Gold&quot; &quot;Silver&quot; &quot;Platinum&quot; &quot;Silver&quot; ...
+##  $ rating_layanan    : int  4 2 5 3 1 4 2 5
+##  $ lama_langganan_bln: int  26 5 48 12 3 30 7 60
+##  $ total_belanja     : chr  &quot;Rp 4.250.000&quot; &quot;Rp 850.000&quot; &quot;Rp 12.900.000&quot; &quot;Rp 1.320.000&quot; ...
+##  $ suhu_gudang_c     : num  24.5 25.1 23.8 26 24.9 25.4 24.2 25.7
+##  $ churn             : chr  &quot;Tidak&quot; &quot;Ya&quot; &quot;Tidak&quot; &quot;Tidak&quot; ...</code></pre>
+<p><strong>Metadata dari tim CRM</strong>: gender 1 = Laki-laki, 2 =
+Perempuan; segmen berurutan Bronze &lt; Silver &lt; Gold &lt; Platinum;
+rating_layanan skala 1–5 (1 = sangat buruk); suhu_gudang_c = suhu
+rata-rata gudang pengirim (°C).</p>
+<div id="langkah-1-klasifikasi-setiap-variabel" class="section level2"
+number="6.1">
+<h2><span class="header-section-number">6.1</span> Langkah 1:
+Klasifikasi Setiap Variabel</h2>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+<col width="19%" />
+<col width="19%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Variabel</th>
+<th align="left">Jenis data</th>
+<th align="left">Skala</th>
+<th align="center">Tipe R saat ini</th>
+<th align="center">Tipe R seharusnya</th>
+<th align="left">Peran</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>id</code></td>
+<td align="left">Label</td>
+<td align="left"><span class="math inline">\(-\)</span></td>
+<td align="center"><code>chr</code></td>
+<td align="center"><code>character</code></td>
+<td align="left">Pengenal (bukan <em>feature</em>)</td>
+</tr>
+<tr class="even">
+<td align="left"><code>gender</code></td>
+<td align="left">Kualitatif</td>
+<td align="left">Nominal</td>
+<td align="center"><code>int</code></td>
+<td align="center"><code>factor</code></td>
+<td align="left"><em>Feature</em></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>kota</code></td>
+<td align="left">Kualitatif</td>
+<td align="left">Nominal</td>
+<td align="center"><code>chr</code></td>
+<td align="center"><code>factor</code></td>
+<td align="left"><em>Feature</em></td>
+</tr>
+<tr class="even">
+<td align="left"><code>segmen</code></td>
+<td align="left">Kualitatif</td>
+<td align="left">Ordinal</td>
+<td align="center"><code>chr</code></td>
+<td align="center"><code>ordered</code></td>
+<td align="left"><em>Feature</em></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>rating_layanan</code></td>
+<td align="left">Kualitatif (berkode angka)</td>
+<td align="left">Ordinal</td>
+<td align="center"><code>int</code></td>
+<td align="center"><code>ordered</code></td>
+<td align="left"><em>Feature</em></td>
+</tr>
+<tr class="even">
+<td align="left"><code>lama_langganan_bln</code></td>
+<td align="left">Kuantitatif kontinu (dicatat bulat)</td>
+<td align="left">Rasio</td>
+<td align="center"><code>int</code></td>
+<td align="center"><code>numeric</code></td>
+<td align="left"><em>Feature</em></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>total_belanja</code></td>
+<td align="left">Kuantitatif (diperlakukan kontinu)</td>
+<td align="left">Rasio</td>
+<td align="center"><code>chr</code></td>
+<td align="center"><code>numeric</code></td>
+<td align="left"><em>Feature</em></td>
+</tr>
+<tr class="even">
+<td align="left"><code>suhu_gudang_c</code></td>
+<td align="left">Kuantitatif kontinu</td>
+<td align="left">Interval</td>
+<td align="center"><code>num</code></td>
+<td align="center"><code>numeric</code></td>
+<td align="left"><em>Feature</em></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>churn</code></td>
+<td align="left">Kualitatif</td>
+<td align="left">Nominal (biner)</td>
+<td align="center"><code>chr</code></td>
+<td align="center"><code>factor</code></td>
+<td align="left"><strong><em>Target</em></strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="langkah-2-mengonversi-ke-tipe-yang-tepat"
+class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Langkah 2:
+Mengonversi ke Tipe yang Tepat</h2>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" tabindex="-1"></a>bersih <span class="ot">&lt;-</span> <span class="fu">within</span>(pelanggan, {</span>
+<span id="cb68-2"><a href="#cb68-2" tabindex="-1"></a>gender <span class="ot">&lt;-</span> <span class="fu">factor</span>(gender, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Laki-laki&quot;</span>, <span class="st">&quot;Perempuan&quot;</span>))</span>
+<span id="cb68-3"><a href="#cb68-3" tabindex="-1"></a>kota <span class="ot">&lt;-</span> <span class="fu">factor</span>(kota)</span>
+<span id="cb68-4"><a href="#cb68-4" tabindex="-1"></a>segmen <span class="ot">&lt;-</span> <span class="fu">factor</span>(segmen, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Bronze&quot;</span>, <span class="st">&quot;Silver&quot;</span>, <span class="st">&quot;Gold&quot;</span>, <span class="st">&quot;Platinum&quot;</span>),</span>
+<span id="cb68-5"><a href="#cb68-5" tabindex="-1"></a></span>
+<span id="cb68-6"><a href="#cb68-6" tabindex="-1"></a><span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb68-7"><a href="#cb68-7" tabindex="-1"></a></span>
+<span id="cb68-8"><a href="#cb68-8" tabindex="-1"></a>rating_layanan <span class="ot">&lt;-</span> <span class="fu">factor</span>(rating_layanan, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb68-9"><a href="#cb68-9" tabindex="-1"></a>total_belanja <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&quot;[^0-9]&quot;</span>, <span class="st">&quot;&quot;</span>, total_belanja))</span>
+<span id="cb68-10"><a href="#cb68-10" tabindex="-1"></a>churn <span class="ot">&lt;-</span> <span class="fu">factor</span>(churn, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Tidak&quot;</span>, <span class="st">&quot;Ya&quot;</span>))</span>
+<span id="cb68-11"><a href="#cb68-11" tabindex="-1"></a>})</span>
+<span id="cb68-12"><a href="#cb68-12" tabindex="-1"></a><span class="fu">str</span>(bersih)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    8 obs. of  9 variables:
+##  $ id                : chr  &quot;C001&quot; &quot;C002&quot; &quot;C003&quot; &quot;C004&quot; ...
+##  $ gender            : Factor w/ 2 levels &quot;Laki-laki&quot;,&quot;Perempuan&quot;: 1 2 2 1 1 2 1 2
+##  $ kota              : Factor w/ 4 levels &quot;Bandung&quot;,&quot;Bekasi&quot;,..: 2 1 2 4 1 3 2 4
+##  $ segmen            : Ord.factor w/ 4 levels &quot;Bronze&quot;&lt;&quot;Silver&quot;&lt;..: 3 2 4 2 1 3 1 4
+##  $ rating_layanan    : Ord.factor w/ 5 levels &quot;1&quot;&lt;&quot;2&quot;&lt;&quot;3&quot;&lt;&quot;4&quot;&lt;..: 4 2 5 3 1 4 2 5
+##  $ lama_langganan_bln: int  26 5 48 12 3 30 7 60
+##  $ total_belanja     : num  4250000 850000 12900000 1320000 210000 ...
+##  $ suhu_gudang_c     : num  24.5 25.1 23.8 26 24.9 25.4 24.2 25.7
+##  $ churn             : Factor w/ 2 levels &quot;Tidak&quot;,&quot;Ya&quot;: 1 2 1 1 2 1 2 1</code></pre>
+</div>
+<div id="langkah-3-ringkasan-yang-sesuai-skala" class="section level2"
+number="6.3">
+<h2><span class="header-section-number">6.3</span> Langkah 3: Ringkasan
+yang Sesuai Skala</h2>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" tabindex="-1"></a><span class="fu">table</span>(bersih<span class="sc">$</span>gender) <span class="co"># nominal -&gt; frekuensi</span></span></code></pre></div>
+<pre><code>## 
+## Laki-laki Perempuan 
+##         4         4</code></pre>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" tabindex="-1"></a><span class="fu">table</span>(bersih<span class="sc">$</span>segmen) <span class="co"># ordinal -&gt; frekuensi berurutan</span></span></code></pre></div>
+<pre><code>## 
+##   Bronze   Silver     Gold Platinum 
+##        2        2        2        2</code></pre>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" tabindex="-1"></a><span class="fu">median_ordinal</span>(bersih<span class="sc">$</span>rating_layanan) <span class="co"># ordinal -&gt; median kategori</span></span></code></pre></div>
+<pre><code>## [1] &quot;antara 3 dan 4&quot;</code></pre>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" tabindex="-1"></a><span class="fu">mean</span>(bersih<span class="sc">$</span>total_belanja) <span class="co"># rasio -&gt; mean sah</span></span></code></pre></div>
+<pre><code>## [1] 5107500</code></pre>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" tabindex="-1"></a><span class="fu">max</span>(bersih<span class="sc">$</span>total_belanja) <span class="sc">/</span> <span class="fu">min</span>(bersih<span class="sc">$</span>total_belanja) <span class="co"># rasio -&gt; perbandingan sah</span></span></code></pre></div>
+<pre><code>## [1] 75</code></pre>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" tabindex="-1"></a><span class="fu">table</span>(bersih<span class="sc">$</span>segmen, bersih<span class="sc">$</span>churn) <span class="co"># hubungan feature ordinal dan target</span></span></code></pre></div>
+<pre><code>##           
+##            Tidak Ya
+##   Bronze       0  2
+##   Silver       1  1
+##   Gold         2  0
+##   Platinum     2  0</code></pre>
+</div>
+<div id="langkah-4-memisahkan-feature-dan-target" class="section level2"
+number="6.4">
+<h2><span class="header-section-number">6.4</span> Langkah 4: Memisahkan
+Feature dan Target</h2>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" tabindex="-1"></a>X_pel <span class="ot">&lt;-</span> bersih[, <span class="fu">setdiff</span>(<span class="fu">names</span>(bersih), <span class="fu">c</span>(<span class="st">&quot;id&quot;</span>, <span class="st">&quot;churn&quot;</span>))]</span>
+<span id="cb82-2"><a href="#cb82-2" tabindex="-1"></a>y_pel <span class="ot">&lt;-</span> bersih<span class="sc">$</span>churn</span>
+<span id="cb82-3"><a href="#cb82-3" tabindex="-1"></a><span class="fu">names</span>(X_pel)</span></code></pre></div>
+<pre><code>## [1] &quot;gender&quot;             &quot;kota&quot;               &quot;segmen&quot;            
+## [4] &quot;rating_layanan&quot;     &quot;lama_langganan_bln&quot; &quot;total_belanja&quot;     
+## [7] &quot;suhu_gudang_c&quot;</code></pre>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" tabindex="-1"></a><span class="fu">table</span>(y_pel)</span></code></pre></div>
+<pre><code>## y_pel
+## Tidak    Ya 
+##     5     3</code></pre>
+</div>
+<div id="pertanyaan-diskusi-dan-jawaban" class="section level2"
+number="6.5">
+<h2><span class="header-section-number">6.5</span> Pertanyaan Diskusi
+dan Jawaban</h2>
+<p><strong>1. Mengapa gender tidak boleh dibiarkan sebagai int?</strong>
+<br> Karena angka 1 dan 2 hanya kode. Jika dibiarkan numerik, model akan
+menganggap “Perempuan = 2 kali Laki-laki” atau menghitung rata-rata
+gender (misalnya 1,5) yang tidak bermakna. <br> <br> <strong>2. Bolehkah
+kita menyatakan “rata-rata rating layanan = 3,25”?</strong> <br> Secara
+ketat tidak, karena rating_layanan adalah satu butir skala ordinal –
+jarak antara rating 1 ke 2 belum tentu sama dengan 4 ke 5. Laporan yang
+aman: median (antara 3 dan 4) dan distribusi frekuensinya. Jika mean
+tetap dilaporkan, nyatakan bahwa rating diasumsikan berskala interval.
+<br> <br> <strong>3. Mengapa rasio “suhu gudang C003 dibanding C001”
+tidak bermakna, sementara rasio total belanja bermakna?</strong> <br>
+Suhu °C berskala interval (nol tidak mutlak), sedangkan total belanja
+berskala rasio (Rp 0 be- rarti tidak berbelanja sama sekali). Pelanggan
+C008 benar-benar berbelanja sekitar 75 kali lipat pelanggan C005. <br>
+<br> <strong>4. Mengapa id dikeluarkan dari feature?</strong> id unik
+untuk setiap pelanggan dan tidak memuat informasi perilaku.
+Memasukkannya dapat membuat model “menghafal” pelanggan, bukan
+mempelajari pola.</p>
+<hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
+</div>
+</div>
+<div id="latihan-mandiri" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Latihan Mandiri</h1>
+<div id="latihan-utama-dataset-airquality" class="section level2"
+number="7.1">
+<h2><span class="header-section-number">7.1</span> Latihan Utama:
+Dataset airquality</h2>
+<p>Gunakan dataset bawaan airquality (data sekunder).</p>
+<div id="tugas-1-klasifikasikan-setiap-variabel" class="section level3"
+number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Tugas 1:
+Klasifikasikan setiap variabel</h3>
+<p><strong>Jawaban:</strong></p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Variabel</th>
+<th align="left">Jenis</th>
+<th align="left">Skala</th>
+<th align="left">Alasan</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>Ozone</code></td>
+<td align="left">Kuantitatif kontinu</td>
+<td align="left">Rasio</td>
+<td align="left">0 ppb berarti tidak ada ozon</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Solar.R</code></td>
+<td align="left">Kuantitatif kontinu</td>
+<td align="left">Rasio</td>
+<td align="left">0 berarti tidak ada radiasi</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Wind</code></td>
+<td align="left">Kuantitatif kontinu</td>
+<td align="left">Rasio</td>
+<td align="left">0 mil/jam berarti tidak ada angin</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Temp</code></td>
+<td align="left">Kuantitatif kontinu</td>
+<td align="left"><strong>Interval</strong></td>
+<td align="left">Suhu °F tidak memiliki nol mutlak</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>Month</code></td>
+<td align="left">Kualitatif (berkode angka)</td>
+<td align="left">Ordinal</td>
+<td align="left">Bulan berurutan; kodenya label</td>
+</tr>
+<tr class="even">
+<td align="left"><code>Day</code></td>
+<td align="left">Kualitatif (berkode angka)</td>
+<td align="left">Ordinal</td>
+<td align="left">Menunjukkan urutan tanggal, bukan kuantitas</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div
+id="tugas-2-ubah-month-menjadi-factor-berurutan-dengan-label-nama-bulan"
+class="section level3" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Tugas 2: Ubah Month
+menjadi factor berurutan dengan label nama bulan</h3>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" tabindex="-1"></a>aq <span class="ot">&lt;-</span> airquality</span>
+<span id="cb86-2"><a href="#cb86-2" tabindex="-1"></a>aq<span class="sc">$</span>Month <span class="ot">&lt;-</span> <span class="fu">factor</span>(aq<span class="sc">$</span>Month, <span class="at">levels =</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,</span>
+<span id="cb86-3"><a href="#cb86-3" tabindex="-1"></a></span>
+<span id="cb86-4"><a href="#cb86-4" tabindex="-1"></a><span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Mei&quot;</span>, <span class="st">&quot;Jun&quot;</span>, <span class="st">&quot;Jul&quot;</span>, <span class="st">&quot;Agu&quot;</span>, <span class="st">&quot;Sep&quot;</span>), <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb86-5"><a href="#cb86-5" tabindex="-1"></a></span>
+<span id="cb86-6"><a href="#cb86-6" tabindex="-1"></a><span class="fu">table</span>(aq<span class="sc">$</span>Month)</span></code></pre></div>
+<pre><code>## 
+## Mei Jun Jul Agu Sep 
+##  31  30  31  31  30</code></pre>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" tabindex="-1"></a><span class="fu">aggregate</span>(Ozone <span class="sc">~</span> Month, <span class="at">data =</span> aq, <span class="at">FUN =</span> mean) <span class="co"># baris dengan NA otomatis diabaikan</span></span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Month"],"name":[1],"type":["ord"],"align":["right"]},{"label":["Ozone"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Mei","2":"23.61538"},{"1":"Jun","2":"29.44444"},{"1":"Jul","2":"59.11538"},{"1":"Agu","2":"59.96154"},{"1":"Sep","2":"31.44828"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div
+id="tugas-4-konversi-temp-ke-c-dan-kelvin-lalu-jelaskan-mengapa-rasio-suhu"
+class="section level3" number="7.1.3">
+<h3><span class="header-section-number">7.1.3</span> Tugas 4: Konversi
+Temp ke °C dan Kelvin, lalu jelaskan mengapa rasio suhu</h3>
+<p>hanya sah pada Kelvin</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" tabindex="-1"></a>aq<span class="sc">$</span>Temp_C <span class="ot">&lt;-</span> (aq<span class="sc">$</span>Temp <span class="sc">-</span> <span class="dv">32</span>) <span class="sc">*</span> <span class="dv">5</span> <span class="sc">/</span> <span class="dv">9</span></span>
+<span id="cb89-2"><a href="#cb89-2" tabindex="-1"></a>aq<span class="sc">$</span>Temp_K <span class="ot">&lt;-</span> aq<span class="sc">$</span>Temp_C <span class="sc">+</span> <span class="fl">273.15</span></span>
+<span id="cb89-3"><a href="#cb89-3" tabindex="-1"></a>suhu_ekstrem <span class="ot">&lt;-</span> aq[<span class="fu">c</span>(<span class="fu">which.min</span>(aq<span class="sc">$</span>Temp), <span class="fu">which.max</span>(aq<span class="sc">$</span>Temp)), <span class="fu">c</span>(<span class="st">&quot;Temp&quot;</span>, <span class="st">&quot;Temp_C&quot;</span>, <span class="st">&quot;Temp_K&quot;</span>)]</span>
+<span id="cb89-4"><a href="#cb89-4" tabindex="-1"></a>suhu_ekstrem</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Temp"],"name":[1],"type":["int"],"align":["right"]},{"label":["Temp_C"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Temp_K"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"56","2":"13.33333","3":"286.4833","_rn_":"5"},{"1":"97","2":"36.11111","3":"309.2611","_rn_":"120"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" tabindex="-1"></a><span class="fu">round</span>(suhu_ekstrem[<span class="dv">2</span>, ] <span class="sc">/</span> suhu_ekstrem[<span class="dv">1</span>, ], <span class="dv">3</span>)</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Temp"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Temp_C"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Temp_K"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"1.732","2":"2.708","3":"1.08","_rn_":"120"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p><strong>Jawaban</strong>: Hari terpanas “tampak” 1.73 kali lebih
+panas dalam °F dan 2.71 kali dalam °C, tetapi hanya 1.08 kali dalam
+Kelvin. Hanya Kelvin yang nolnya mutlak, sehingga hanya rasio Kelvin
+yang</p>
+</div>
+<div id="tugas-5-tentukan-feature-dan-target" class="section level3"
+number="7.1.4">
+<h3><span class="header-section-number">7.1.4</span> Tugas 5: Tentukan
+<em>feature</em> dan <em>target</em></h3>
+<p>bermakna secara fisik.</p>
+<p>Jika tujuannya memprediksi kadar ozon dari kondisi cuaca, tentukan
+feature, target, dan jenis tugasnya.</p>
+<p>Jawaban: Target = Ozone (rasio) sehingga tugasnya regresi; feature =
+Solar.R, Wind, Temp, dan Month. Day sebaiknya tidak dipakai langsung
+karena hanya urutan tanggal.</p>
+</div>
+<div id="tugas-6-tantangan-ubah-ke-format-long" class="section level3"
+number="7.1.5">
+<h3><span class="header-section-number">7.1.5</span> Tugas 6
+(Tantangan): Ubah ke format <em>long</em></h3>
+<p>Ubah kolom Ozone, Wind, dan Temp untuk 3 hari pertama menjadi format
+long dengan kolom variabel dan nilai.</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" tabindex="-1"></a>aq3 <span class="ot">&lt;-</span> airquality[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="fu">c</span>(<span class="st">&quot;Month&quot;</span>, <span class="st">&quot;Day&quot;</span>, <span class="st">&quot;Ozone&quot;</span>, <span class="st">&quot;Wind&quot;</span>, <span class="st">&quot;Temp&quot;</span>)]</span>
+<span id="cb91-2"><a href="#cb91-2" tabindex="-1"></a>aq3_long <span class="ot">&lt;-</span> <span class="fu">reshape</span>(aq3, <span class="at">direction =</span> <span class="st">&quot;long&quot;</span>, <span class="at">varying =</span> <span class="fu">c</span>(<span class="st">&quot;Ozone&quot;</span>, <span class="st">&quot;Wind&quot;</span>, <span class="st">&quot;Temp&quot;</span>),</span>
+<span id="cb91-3"><a href="#cb91-3" tabindex="-1"></a></span>
+<span id="cb91-4"><a href="#cb91-4" tabindex="-1"></a><span class="at">v.names =</span> <span class="st">&quot;nilai&quot;</span>, <span class="at">timevar =</span> <span class="st">&quot;variabel&quot;</span>,</span>
+<span id="cb91-5"><a href="#cb91-5" tabindex="-1"></a><span class="at">times =</span> <span class="fu">c</span>(<span class="st">&quot;Ozone&quot;</span>, <span class="st">&quot;Wind&quot;</span>, <span class="st">&quot;Temp&quot;</span>), <span class="at">idvar =</span> <span class="fu">c</span>(<span class="st">&quot;Month&quot;</span>, <span class="st">&quot;Day&quot;</span>))</span>
+<span id="cb91-6"><a href="#cb91-6" tabindex="-1"></a></span>
+<span id="cb91-7"><a href="#cb91-7" tabindex="-1"></a><span class="fu">rownames</span>(aq3_long) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb91-8"><a href="#cb91-8" tabindex="-1"></a>aq3_long</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Month"],"name":[1],"type":["int"],"align":["right"]},{"label":["Day"],"name":[2],"type":["int"],"align":["right"]},{"label":["variabel"],"name":[3],"type":["chr"],"align":["left"]},{"label":["nilai"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"5","2":"1","3":"Ozone","4":"41.0"},{"1":"5","2":"2","3":"Ozone","4":"36.0"},{"1":"5","2":"3","3":"Ozone","4":"12.0"},{"1":"5","2":"1","3":"Wind","4":"7.4"},{"1":"5","2":"2","3":"Wind","4":"8.0"},{"1":"5","2":"3","3":"Wind","4":"12.6"},{"1":"5","2":"1","3":"Temp","4":"67.0"},{"1":"5","2":"2","3":"Temp","4":"72.0"},{"1":"5","2":"3","3":"Temp","4":"74.0"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p><strong>Catatan</strong>: format long seperti ini praktis untuk
+visualisasi banyak variabel sekaligus, tetapi perhatikan bahwa kolom
+nilai kini mencampur satuan berbeda (ppb, mil/jam, °F) – jangan
+meringkasnya bersama-sama.</p>
+</div>
+</div>
+<div id="latihan-tambahan-self-check" class="section level2"
+number="7.2">
+<h2><span class="header-section-number">7.2</span> Latihan Tambahan
+(Self-Check)</h2>
+<p>Kerjakan soal-soal berikut secara mandiri sebelum melihat kunci
+jawaban pada komentar kode. <br><br> <strong>Soal A</strong>. Tentukan
+skala pengukuran: (1) nomor punggung pemain, (2) peringkat klasemen
+liga, (3) skor TOEFL, (4) waktu lari 100 m, (5) tahun berdirinya
+perusahaan, (6) jumlah karyawan, (7) tingkat keparahan gempa pada skala
+MMI (I–XII).</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" tabindex="-1"></a><span class="co"># Kunci jawaban:</span></span>
+<span id="cb92-2"><a href="#cb92-2" tabindex="-1"></a><span class="co"># (1) Nominal (2) Ordinal (3) Interval (skor tanpa nol mutlak)</span></span>
+<span id="cb92-3"><a href="#cb92-3" tabindex="-1"></a><span class="co"># (4) Rasio (5) Interval (tahun 0 bukan &quot;tidak ada waktu&quot;)</span></span>
+<span id="cb92-4"><a href="#cb92-4" tabindex="-1"></a><span class="co"># (6) Rasio (7) Ordinal (tingkatan intensitas, jarak tidak setara)</span></span></code></pre></div>
+<p><strong>Soal B</strong>. Tentukan apakah data berikut diskrit atau
+kontinu: (1) jumlah SKS yang diambil, (2) IPK, (3) volume air hujan
+harian, (4) jumlah kendaraan yang melintas per jam, (5) usia dalam
+tahun.</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" tabindex="-1"></a><span class="co"># Kunci jawaban:</span></span>
+<span id="cb93-2"><a href="#cb93-2" tabindex="-1"></a><span class="co"># (1) Diskrit (2) Kontinu (dalam rentang 0-4, dibulatkan 2 desimal)</span></span>
+<span id="cb93-3"><a href="#cb93-3" tabindex="-1"></a><span class="co"># (3) Kontinu (4) Diskrit</span></span>
+<span id="cb93-4"><a href="#cb93-4" tabindex="-1"></a><span class="co"># (5) Kontinu (usia terus bertambah; bilangan bulat hanya akibat pencatatan)</span></span></code></pre></div>
+<p><strong>Soal C</strong>. Diberikan vektor kelas_hotel &lt;-
+c(“Bintang 3”, “Bintang 5”, “Bintang 4”, “Bintang 3”, “Bintang 5”,
+“Bintang 3”). Ubah menjadi ordered factor, tampilkan frekuensinya sesuai
+urutan, lalu tentukan medianya.</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" tabindex="-1"></a>kelas_hotel <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Bintang 3&quot;</span>, <span class="st">&quot;Bintang 5&quot;</span>, <span class="st">&quot;Bintang 4&quot;</span>, <span class="st">&quot;Bintang 3&quot;</span>, <span class="st">&quot;Bintang 5&quot;</span>, <span class="st">&quot;Bintang 3&quot;</span>)</span>
+<span id="cb94-2"><a href="#cb94-2" tabindex="-1"></a><span class="co"># Kunci jawaban:</span></span>
+<span id="cb94-3"><a href="#cb94-3" tabindex="-1"></a>kelas_hotel <span class="ot">&lt;-</span> <span class="fu">factor</span>(kelas_hotel, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Bintang 3&quot;</span>, <span class="st">&quot;Bintang 4&quot;</span>, <span class="st">&quot;Bintang 5&quot;</span>),</span>
+<span id="cb94-4"><a href="#cb94-4" tabindex="-1"></a></span>
+<span id="cb94-5"><a href="#cb94-5" tabindex="-1"></a><span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb94-6"><a href="#cb94-6" tabindex="-1"></a></span>
+<span id="cb94-7"><a href="#cb94-7" tabindex="-1"></a><span class="fu">table</span>(kelas_hotel) <span class="co"># 3, 1, 2</span></span></code></pre></div>
+<pre><code>## kelas_hotel
+## Bintang 3 Bintang 4 Bintang 5 
+##         3         1         2</code></pre>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" tabindex="-1"></a><span class="fu">median_ordinal</span>(kelas_hotel) <span class="co"># &quot;antara Bintang 3 dan Bintang 4&quot;</span></span></code></pre></div>
+<pre><code>## [1] &quot;antara Bintang 3 dan Bintang 4&quot;</code></pre>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" tabindex="-1"></a><span class="co"># Urutan kode: 1, 1, 1, 2, 3, 3 -&gt; median = (1 + 2) / 2 = 1,5</span></span>
+<span id="cb98-2"><a href="#cb98-2" tabindex="-1"></a><span class="co"># Pada data ordinal berukuran genap, median bisa jatuh di antara dua kategori.</span></span></code></pre></div>
+<p><strong>Soal D</strong>. Seorang analis menyatakan: “Kota A (suhu
+rata-rata 30 °C) dua kali lebih panas daripada Kota B (15 °C).” Apakah
+pernyataan ini benar? Buktikan dengan R.</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" tabindex="-1"></a><span class="co"># Kunci jawaban:</span></span>
+<span id="cb99-2"><a href="#cb99-2" tabindex="-1"></a><span class="fu">c</span>(<span class="at">A =</span> <span class="dv">30</span>, <span class="at">B =</span> <span class="dv">15</span>) <span class="sc">+</span> <span class="fl">273.15</span> <span class="co"># 303.15 K dan 288.15 K</span></span></code></pre></div>
+<pre><code>##      A      B 
+## 303.15 288.15</code></pre>
+<div class="sourceCode" id="cb101"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" tabindex="-1"></a>(<span class="dv">30</span> <span class="sc">+</span> <span class="fl">273.15</span>) <span class="sc">/</span> (<span class="dv">15</span> <span class="sc">+</span> <span class="fl">273.15</span>) <span class="co"># rasio sebenarnya ~ 1.052</span></span></code></pre></div>
+<pre><code>## [1] 1.052056</code></pre>
+<div class="sourceCode" id="cb103"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" tabindex="-1"></a><span class="co"># Pernyataan KELIRU: °C berskala interval. Yang benar: Kota A lebih panas 15 °C daripada Kota B.</span></span></code></pre></div>
+<hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
+</div>
+</div>
+<div id="kesalahan-umum-dalam-jenis-data-dan-skala-pengukuran"
+class="section level1" number="8">
+<h1><span class="header-section-number">8</span> Kesalahan Umum dalam
+Jenis Data dan Skala Pengukuran</h1>
+<ol style="margin-left:10px;">
+<li>
+<strong>Menghitung mean dari kode kategori</strong> – misalnya
+“rata-rata gender = 1,46” atau “ratarata kode provinsi”
+</li>
+<li>
+<strong>Menganggap semua angka sebagai kuantitatif</strong> – nomor
+punggung, kode pos, dan NIM adalah label
+</li>
+<li>
+<strong>Membuat pernyataan rasio pada skala interval</strong> – “20 °C
+dua kali lebih panas dari 10 °C”.
+</li>
+<li>
+<strong>Mengira pembulatan membuat data menjadi diskrit</strong> – usia
+“21 tahun” tetap kontinu.
+</li>
+<li>
+<strong>Membiarkan data ordinal sebagai teks</strong> – R mengurutkannya
+menurut abjad sehingga grafik dan tabel menjadi tidak logis.
+</li>
+<li>
+<strong>Memakai as.numeric() langsung pada factor berisi angka</strong>
+– hasilnya nomor level; gunakan as.numeric(as.character(x)).
+</li>
+<li>
+<strong>Membiarkan angka tersimpan sebagai teks (“Rp 12.500”)</strong> –
+perhitungan menghasilkan NA.
+</li>
+<li>
+<strong>Memakai data sekunder tanpa membaca metadata</strong> – satuan
+(°F vs °C) atau kode (5 = Mei) disalahartikan.
+</li>
+<li>
+<strong>Memasukkan kolom ID sebagai feature – model menghafal, bukan
+belajar.</strong>
+</li>
+<li>
+<strong>Menganalisis data dalam format wide ketika sebuah variabel
+tersembunyi di nama kolom</strong> – ubah ke format <em>long</em>
+terlebih dahulu.
+</li>
+<li>
+<strong>Merata-ratakan satu butir Likert tanpa menyatakan
+asumsi</strong> – laporkan median/frekuensi, atau nyatakan asumsi
+interval secara eksplisit.
+</li>
+</ol>
+<hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
+</div>
+<div id="cheat-sheet-fungsi-r-yang-digunakan" class="section level1"
+number="9">
+<h1><span class="header-section-number">9</span> Cheat Sheet: Fungsi R
+yang Digunakan</h1>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Fungsi</th>
+<th align="left">Kegunaan</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>class(x)</code>, <code>str(df)</code></td>
+<td align="left">Memeriksa tipe data</td>
+</tr>
+<tr class="even">
+<td align="left"><code>integer (2L)</code>, <code>numeric</code></td>
+<td align="left">Tipe bilangan bulat dan desimal</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>factor(x, levels, labels)</code></td>
+<td align="left">Data nominal; memberi label pada kode</td>
+</tr>
+<tr class="even">
+<td align="left"><code>factor(x, levels, ordered = TRUE)</code></td>
+<td align="left">Data ordinal</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>levels(x)</code></td>
+<td align="left">Melihat kategori dan urutannya</td>
+</tr>
+<tr class="even">
+<td align="left"><code>as.integer(f)</code></td>
+<td align="left">Nomor urut level sebuah factor</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>as.numeric(as.character(f))</code></td>
+<td align="left">Mengkonversi factor berisi angka menjadi angka
+sebenarnya</td>
+</tr>
+<tr class="even">
+<td align="left"><code>as.character(x)</code></td>
+<td align="left">Mengubah menjadi teks</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>gsub("[^0-9]", "", x)</code></td>
+<td align="left">Membuang karakter selain angka</td>
+</tr>
+<tr class="even">
+<td align="left"><code>read.csv(text = ...)</code> /
+<code>read.csv("file.csv")</code></td>
+<td align="left">Membaca data CSV</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>is.na(x)</code>,
+<code>colSums(is.na(df))</code></td>
+<td align="left">Mendeteksi dan menghitung nilai hilang</td>
+</tr>
+<tr class="even">
+<td align="left"><code>table(x)</code>,
+<code>prop.table(table(x))</code></td>
+<td align="left">Frekuensi dan proporsi</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>within(df, {...})</code></td>
+<td align="left">Mengubah beberapa kolom sekaligus</td>
+</tr>
+<tr class="even">
+<td align="left"><code>reshape(df, direction = "long")</code></td>
+<td align="left">Mengubah format <em>wide</em> menjadi
+<em>long</em></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>aggregate(y ~ g, data, FUN)</code></td>
+<td align="left">Ringkasan per kelompok</td>
+</tr>
+<tr class="even">
+<td align="left"><code>setdiff(a, b)</code></td>
+<td align="left">Elemen <code>a</code> yang tidak ada di <code>b</code>
+(memilih kolom <em>feature</em>)</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>mapply(f, ...)</code></td>
+<td align="left">Menerapkan fungsi ke beberapa vektor secara
+berpasangan</td>
+</tr>
+<tr class="even">
+<td align="left"><code>data(nama)</code>, <code>?nama</code></td>
+<td align="left">Memuat dataset bawaan dan membaca dokumentasinya</td>
+</tr>
+</tbody>
+</table>
+<hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
+</div>
+<div id="glosarium-istilah" class="section level1" number="10">
+<h1><span class="header-section-number">10</span> Glosarium Istilah</h1>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Istilah</th>
+<th align="left">Definisi Singkat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>Data Kualitatif</strong></td>
+<td align="left">Data berupa label atau kategori</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Data Kuantitatif</strong></td>
+<td align="left">Data berupa angka hasil menghitung atau mengukur</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Data Diskrit</strong></td>
+<td align="left">Data kuantitatif yang nilainya terhitung (hasil
+menghitung)</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Data Kontinu</strong></td>
+<td align="left">Data kuantitatif yang dapat bernilai berapa pun dalam
+suatu rentang (hasil mengukur)</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Data Primer</strong></td>
+<td align="left">Data yang dikumpulkan sendiri untuk tujuan
+penelitian</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Data Sekunder</strong></td>
+<td align="left">Data yang dikumpulkan pihak lain dan dipakai ulang</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Metadata / Kamus Data</strong></td>
+<td align="left">Keterangan arti, satuan, kode, dan asal-usul setiap
+variabel</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Skala Nominal</strong></td>
+<td align="left">Skala yang hanya membedakan kategori</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Skala Ordinal</strong></td>
+<td align="left">Skala kategori yang dapat diurutkan, jarak tidak pasti
+setara</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Skala Interval</strong></td>
+<td align="left">Skala dengan jarak setara tetapi tanpa nol mutlak</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Skala Rasio</strong></td>
+<td align="left">Skala dengan jarak setara dan nol mutlak; perbandingan
+bermakna</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Nol Mutlak</strong></td>
+<td align="left">Titik nol yang berarti “tidak ada sama sekali”</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Factor</strong></td>
+<td align="left">Tipe data R untuk variabel kategorik</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Ordered Factor</strong></td>
+<td align="left">Factor yang kategorinya memiliki urutan</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Observasi</strong></td>
+<td align="left">Satu baris data (satu unit yang diamati)</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Feature</strong></td>
+<td align="left">Variabel masukan untuk memprediksi (variabel
+independen)</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Target</strong></td>
+<td align="left">Variabel yang ingin diprediksi (variabel dependen)</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Tidy Data</strong></td>
+<td align="left">Data dengan satu variabel per kolom, satu observasi per
+baris, satu nilai per sel</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Format Wide / Long</strong></td>
+<td align="left">Susunan data dengan pengukuran berulang sebagai kolom /
+sebagai baris</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="rangkuman-dan-kesimpulan" class="section level1" number="11">
+<h1><span class="header-section-number">11</span> Rangkuman dan
+Kesimpulan</h1>
+<ol>
+<li>
+<strong>Data kualitatif</strong> berupa kategori; <strong>data
+kuantitatif</strong> berupa angka yang bermakna secara aritmetika. Data
+kuantitatif dibagi menjadi <strong>diskrit</strong> (menghitung) dan
+<strong>kontinu</strong> (mengukur).
+</li>
+<li>
+<strong>Data primer</strong> dikumpulkan sendiri, <strong>data
+sekunder</strong> dipakai ulang. Data sekunder wajib disertai
+<strong>metadata</strong>.
+</li>
+<li>
+<strong>Skala pengukuran</strong> – nominal, ordinal, interval, rasio –
+bersifat bertingkat. Makin tinggi skalanya, makin banyak operasi yang
+sah. Rasio "dua kali lipat" hanya sah pada skala <strong>rasio</strong>.
+</li>
+<li>
+<strong>Tipe data di R harus mencerminkan skala:</strong>
+<code>factor</code> untuk nominal, <code>ordered</code> untuk ordinal,
+<code>numeric</code> untuk interval/rasio. R hanya tahu tipe
+penyimpanan; maknanya ditentukan analis.
+</li>
+<li>
+<strong>Dataset <em>tidy</em></strong> menempatkan observasi di baris
+dan variabel di kolom. Dalam <em>machine learning</em>, variabel dibagi
+menjadi <strong><em>feature</em></strong> dan
+<strong><em>target</em></strong>, dan skala target menentukan jenis
+tugas (klasifikasi atau regresi).
+</li>
+</ol>
+<p><strong>Jembatan ke sesi berikutnya:</strong> setelah memahami jenis
+data, Pertemuan 3 membahas <strong>bagaimana data diperoleh</strong> –
+metode pengumpulan data, teknik sampling probabilitas dan
+non-probabilitas, serta berbagai bentuk <strong>bias</strong> yang dapat
+merusak kesimpulan.</p>
+<hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
+</div>
+<div id="referensi-pendukung" class="section level1" number="12">
+<h1><span class="header-section-number">12</span> Referensi
+Pendukung</h1>
+<p>Materi ini merangkum topik jenis data dan skala pengukuran (<em>types
+of data and levels of measurement</em>) yang umum dibahas pada bab awal
+buku teks pengantar statistika bisnis/data science. Mahasiswa disarankan
+melengkapi pemahaman dengan merujuk pada:</p>
+<ul>
+<li>
+Modul/slide perkuliahan "Introduction to Statistics (SDT-1102)" –
+Pertemuan 2: Jenis Data dan Skala Pengukuran.
+</li>
+<li>
+Stevens, S. S. (1946). On the Theory of Scales of Measurement.
+<em>Science</em>, 103(2684), 677–680.
+</li>
+<li>
+Wickham, H. (2014). Tidy Data. <em>Journal of Statistical Software</em>,
+59(10).
+</li>
+<li>
+Dokumentasi resmi R: <code>?factor</code>, <code>?read.csv</code>,
+<code>?reshape</code>, <code>?airquality</code>, <code>?iris</code>
+(dapat diakses langsung di R/RStudio).
+</li>
+</ul>
+</div>
+</div>
+
+   
+   
+            
+      
+
+  <script>
+    $(document).ready(function () {
+
+			
+ 	 	$('#content img').addClass("image-thumb");
+		
+		$('#content img:not(.no-lightbox)').addClass("image-lb");
+	$('#content').magnificPopup({
+	    type:'image',
+	    closeOnContentClick: false,
+	    closeBtnInside: false,
+	    delegate: '.image-lb',
+	    gallery: {enabled: true },
+	    image: {
+	        verticalFit: true,
+		titleSrc: 'alt'
+	    }
+ 	});
+ 	    });
+  </script>
+
+
+
+    <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+	var script = document.createElement("script");
+	script.type = "text/javascript";
+	script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+	document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+  
+</body>
+</html>
